@@ -17,3 +17,4 @@
 *.nls
 *.bcf
 *.run.xml
+.DS_Store

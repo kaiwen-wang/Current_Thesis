@@ -167,7 +167,62 @@ One common practice is giving a bunch of components in an alphabetical list. Ano
 3. Or, here is the attempt ot categorizing component.gallery using the Chinese style
 
 
+% \section{On the progress and evolution of UIs}
+
+% We can start from the base case of assuming the most simple human-UI input: a terminal of only text.
+
+% You can input text, and you can output text, so you can have text input and text output as your cateogires.
+
+% Then, you nee structures so you have things like TUIs, menu bars, headers, etc.
+
+% Then it evolves more and more, you have like a mouse input or a click input
+
+
+% What many of the UIs seem to be, is a repositioning of the appearance of text,
+
+% The creation of symbols
+
+% Or various inputs of text
+
+% So the division is text/symbolic
+
+% Or input/output. Inputs: clicks or text. because all of these have appearnaces, they are all outputs in a way.
+
+
+
+% It is not easy to categorize them because many of them are outputs and inputs,
+
+% Is it better for usage purposes to have one giant list of things or to categorize things? If for example you categorize things, maybe it makes it harder for people to find things
+
+% How does this compare with the Chinese design system UI categorization
+
+% Moreover, how does creating these categories help us with design systems?
+
+\section{A new taxonomy}
+
+When designing a taxonomy one must ensure it captures the essence of what is important and relevant. A climate taxonomy on average plant leaf size is likely to be a poor predictor of environmental landscapes. These features and attributes may be a numeric sliding scale, or they may be categorical from a finite set of options such as the Köppen-Geiger where one picks from climate, precipitation, and temperature severity during summer or winter (optional) to create a key such as ET (Polar + Tundra) or Cw (Temperate + Dry winter).
+
+Human abstractions, like may things, may be precise or imprecise. The periodic table is an abstraction which accurately captures the nature of different elements: it is complete, the protons follow and incrementing order and they are grouped column-wise by similar properties. An incomplete abstraction would be something like: we have these metals, here we have gases, next we have the elements: fire, earth, water, and air.
+
+Some may see the Köppen-Geiger scale and feel the lowercase letters (it uses both uppercase and lowercase letters to denote various climates) add to an imprecision and confusion because we are now indexing on another axis: letter capitalization. To remove what is necessary is essential and characteristic of clear thought and abstraction, for without it we confuse others with nonsensical abstractions we have created.
+
+2-category classifications are quite common. One consistent theme is the idea of input, output, and internal state. We can draw a bounding box around humans and our brain (internal state), enumerate our senses, and list the potential actions. Terminals have stdin and stdout, as do computers have inputs and outputs. Shannon's Model of Communication also uses this intput/output/internal state pattern.
+
+The Linux Filesystem Hierarchy distinguishes between variable files (stored in /var/ and change frequently during normal system use such as logs, state information, caches) and static files (stored in a variety of directories) which are often binaries, configurations, and dependencies.
+
+With inspiration from the above examples, in the taxonomy of web components we first have a display of information starting with the terminal, and this originally was only text. But frequently we use pictures and symbols to denote things, hence the first distinctive factor of component libraries should be this TEXT/SYMBOLIC key.
+
+Images, progress bars, and avatars would count as symbolic. Of course, many components are not either/or, but may combine both of those features, but these mixed components thus represent a higher-level feature than pure text or symbols.
+
+Another taxonomic key that immediately stands out is the input/output distinction. Of inputs, either a click input, text input, or hover is possible, but since all inputs require some visual on the screen so as to allow someone to navigate an input, considering such existence as an "output" belies the true categorization of the components. Outputs should then be things that only display things on the screen and allow for no input at all: no clicks nor text entry nor hover.
+
+Since components are likely to have multiple of these keys, the proper usage in a component library is not so much to group them into arbitrary categories from a multiplication of those keys but to perhaps have some sort of tab-search-multi group at the top so that one can find the proper components given their knowledge of the component's functionality. Artificial taxonomies just then become another thing people have to learn, getting them further away from what they need to build things.
+
+
+
 \section{Which design system components are replicated by native browser features?}
+
+An overarching goal of any design system is to reduce
 
 
 
