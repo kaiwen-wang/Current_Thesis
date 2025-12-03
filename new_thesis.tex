@@ -219,11 +219,35 @@ Another taxonomic key that immediately stands out is the input/output distinctio
 Since components are likely to have multiple of these keys, the proper usage in a component library is not so much to group them into arbitrary categories from a multiplication of those keys but to perhaps have some sort of tab-search-multi group at the top so that one can find the proper components given their knowledge of the component's functionality. Artificial taxonomies just then become another thing people have to learn, getting them further away from what they need to build things.
 
 
+\section{Regarding the current classification of web components}
+
+Often there is a data input, data output, write how do I feel abou this or they are listed alphabetically.
 
 \section{Which design system components are replicated by native browser features?}
 
-An overarching goal of any design system is to reduce
+An overarching goal of any design system is to reduce complexity because the alternative is a bunch of unnamed components with numerous different names floating around one's web app. Thus, design systems should not increase the complexity of building web apps by adding more abstractions which are usable with browser features. Therefore the following is a list of components which have similar features in the browser and an elaboration upon them.
 
+
+\section{Are different active states necessary?}
+
+When designing a design system, it is often meant to be cohesive so that all potential use cases are covered. For a button this may include a primary, a secondary, a tertiary, a cancellation or destructive action, and so on.
+
+The purpose of this section is to find which variants are necessary across different design systems and to list all of them.
+
+
+BASICALLY. I need to do this:
+For each design system, for each component, then for each component variant. Evaluate all of them. O(N3), then for each LLM which is O(1).
+
+
+\section{How is the efficacy of theming custom components?}
+
+Components are evaluated for how easy it is to override or theme them.
+
+
+
+\chapter{Generation of components using LLMs}
+
+In this section, a variety of primitive components are attempting to be benchmarked against a spec (which needs to be written) and the code will be released. First I need to choose the primitive components, write the spec, and then compare each leading LLM at generating them. Maybe can create a website that is a benchmark for them.
 
 
 \backmatter
