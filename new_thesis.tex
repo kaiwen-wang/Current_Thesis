@@ -9,10 +9,12 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usepackage{tikz}
+\usepackage{booktabs} % <-- ADD THIS LINE
+\usepackage{graphicx} % Required for \rotatebox
 
 % 3. Metadata
 % \title{Evaluation of LLMs in Generation of Primitive Components for Frontend Design Systems}
-\title{On Frontend Frameworks, Design Systems, and AI in a World of Two-Pole Political and Technological Competition}
+\title{On Frontend Frameworks, Design Systems, and AI with Commentary on Political and Technological Means}
 \author{Kaiwen Wang}
 \date{December 12, 2025}
 
@@ -39,7 +41,9 @@
 % As humans move up the technology tree, things which were previously novel become repeatable subunits for the next layer. For example, there is little more understanding needed to innovate screws---most shapes exist and engineering projects select from an existing set of them. To not 'reinvent the wheel' is a comparative advantage for any organization.
 
 
-This thesis is about technology, or more specifically, frontend design systems in Vue with a corollary on LLMs and AI, but we start with an analogy to set the pace.
+This thesis is about technology, or more specifically, frontend design systems and component libraries in Vue with discussion on the development of technologies, its relation to politics, and the effects of Large Language Models (LLMs), colloquially referred to as AI.
+
+, but we start with an analogy to set the pace.
 
 In our day and age we are presented with myraid of choices; we may see numerous brands of fast foods: McDonalds, Burger King, Wendy's, or one might go to a supermarket and see countless options of foods and brands, or even further one might see numerous styles and brands of clothes but the underlying stitching and fabric material remains the same.
 
@@ -178,10 +182,31 @@ A relatively generic landing page with text and buttons appears once someone nav
 
 Impression of aesthetics upon immediate loading are not extremely cohesive or promising, but it is acceptable. ElementPlus has Figma UI kits like PrimeVue, but puts it in its own "Resource" top navbar section rather than along the left sidebar. It categorizes things into Basic (12), Configuration (1), Form (24), Data (23), Navigation (9), Feedback (10), and Others (2) for a total of 81 components.
 
+% \subsection{Vuestic}
+
+% MAybe talk about import methods as well
+
+% did not do: Inkline, Vuestic, Buefy, Vant, HeadlessUI Vue
 \subsection{Quasar}
+
+Quasar aesthetically seems very similar to ElementPlus. It is messy, unstructed, and contains much extraneous information. Vue components are just one of many sections, as it seems to want to build for multiple devices and apps at the same time rather being just a component library.
+
 \subsection{shadcn-vue}
+
+This is a clone of the well-known shadcn/ui for React, but for Vue. There are a few sections which seem unrelated to the component library such as Blocks, Charts, Themes, and Colors (which is duplicate information that already exists on the default Tailwind site). Components are unordered.
+
 \subsection{Nuxt UI}
+
+The page loads but the design is somewhat tacky. A moving walkway of pictures appears on the right but the animation ease is linear giving it a boring feel. The spacing of the pictures relative to the screen appears not so good. Like other design systems, there a bit too many extra unnecessary sections. The component categorization is different compared to the other libraries.
+
 \subsection{Radix Vue}
+
+Radix Vue, similar to Flowbite Vue 3, seems to have a VitePress page. Components are ungrouped, for a total of 43 different types.
+
+\subsection{Reka UI}
+
+
+
 \subsection{Vuetify}
 Vuetify loads and the page is kind of messy, similar to ElementPlus. There is an annoying animation when navigating between pages.
 
@@ -203,26 +228,113 @@ The loading page is a bit slow likely as it is hosted in Chinese servers. A mix 
 
 A minimalistic yet well-styled VitePress site appears. This includes only the components and they are categorized Components (25), Form (9), Typography (5), and Utils (2) for a total of 41.
 
+\section{A review of the above design systems}
+Based on values of simplicity, straightforwardness, no superfluous information, and high quality design, I am eliminating Quasar and ElementPlus. They are too general and the aesthetics are poor. PrimeVue, shadcn-vue, Nuxt UI, Ant Design Vue, Arco Design, and TDesign are decent. Flowbite Vue 3, Naive UI, and Radix UI are good.
+
+
+\begin{table}[ht]
+    \centering
+    \caption{Comparison of Component Categories Across Vue Design Systems}
+    \label{tab:component-categories}
+    % Updated command to take 1 argument explicitly
+    \newcommand*\rot[1]{\rotatebox{90}{#1}}
+
+    \begin{tabular}{@{}lccccccc@{}}
+        \toprule
+        \textbf{Category}    & \rot{PrimeVue} & \rot{ElementPlus} & \rot{Naive UI} & \rot{Ant Design Vue} & \rot{Arco Design} & \rot{TDesign} & \rot{Flowbite Vue 3} \\
+        \midrule
+        % Core & Foundational
+        General / Basic      &                & $\bullet$         & $\bullet$      & $\bullet$            & $\bullet$         & $\bullet$     &                      \\
+        Layout               &                &                   & $\bullet$      & $\bullet$            & $\bullet$         & $\bullet$     &                      \\
+        Navigation / Menu    & $\bullet$      & $\bullet$         & $\bullet$      & $\bullet$            & $\bullet$         & $\bullet$     &                      \\
+        \midrule
+        % Data Interaction
+        Data Entry / Form    & $\bullet$      & $\bullet$         & $\bullet$      & $\bullet$            & $\bullet$         & $\bullet$     & $\bullet$            \\
+        Data Display         & $\bullet$      & $\bullet$         & $\bullet$      & $\bullet$            & $\bullet$         & $\bullet$     &                      \\
+        \midrule
+        % User Feedback
+        Feedback / Messages  & $\bullet$      & $\bullet$         &                & $\bullet$            & $\bullet$         & $\bullet$     &                      \\
+        \midrule
+        % Specific / Granular
+        Button               & $\bullet$      &                   &                &                      &                   &               &                      \\
+        Panel                & $\bullet$      &                   &                &                      &                   &               &                      \\
+        Overlay              & $\bullet$      &                   &                &                      &                   &               &                      \\
+        File                 & $\bullet$      &                   &                &                      &                   &               &                      \\
+        Chart                & $\bullet$      &                   &                &                      &                   &               &                      \\
+        Media                & $\bullet$      &                   &                &                      &                   &               &                      \\
+        Typography           &                &                   &                &                      &                   &               & $\bullet$            \\
+        \midrule
+        % Meta & Utility
+        Configuration/Config &                & $\bullet$         & $\bullet$      &                      &                   & $\bullet$     &                      \\
+        Utility / Utils      &                &                   & $\bullet$      &                      &                   & $\bullet$     & $\bullet$            \\
+        Other / Misc         & $\bullet$      & $\bullet$         & $\bullet$      & $\bullet$            & $\bullet$         &               &                      \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+\section{Analysis of Component Categories}
+
+\subsection{Repeated and Common Categories}
+Based on the table, a clear consensus exists around a few core concepts, even if the exact naming differs:
+
+\begin{itemize}
+    \item \textbf{Data Entry / Form:} This is the most universal category, present in every single listed library that uses categorization. It represents all components used for user input (inputs, selects, checkboxes, etc.).
+
+    \item \textbf{Data Display:} This is the second most common category, appearing in almost every library. It covers components meant to present information to the user (tables, lists, tags, avatars, etc.).
+
+    \item \textbf{Navigation / Menu:} Also extremely common, this category groups components used for moving around an application (menus, breadcrumbs, tabs, pagination).
+
+    \item \textbf{General / Basic:} Most libraries have a foundational category for fundamental building blocks like buttons (though PrimeVue separates them), icons, and links.
+
+    \item \textbf{Layout:} A common category for components that structure the page, such as grids, dividers, and spacers.
+\end{itemize}
+
+\subsection{Unique or Less Common Categories}
+These categories highlight the different philosophies or specializations of each library:
+
+\begin{itemize}
+    \item \texttt{PrimeVue} has the most granular categorization, with many groups that other libraries merge into broader categories. \texttt{Panel}, \texttt{Overlay}, \texttt{File}, \texttt{Chart}, \texttt{Media}, and \texttt{Button} are all separated into their own top-level categories, which is unique among this set.
+
+    \item \texttt{Flowbite Vue 3} is the only library with a dedicated \textbf{Typography} category.
+
+    \item \textbf{Feedback / Messages} (or \textit{Notifications} in \texttt{TDesign}) is a fairly common concept for alerts, modals, and toasts, though \texttt{Naive UI} and \texttt{Flowbite} don't specify it at the top level.
+
+    \item \textbf{Configuration / Config} appears in \texttt{ElementPlus}, \texttt{Naive UI}, and \texttt{TDesign} for global configuration providers.
+
+    \item \textbf{Other / Misc / Utils} are common catch-all categories for components that don't fit neatly elsewhere.
+\end{itemize}
+
+
 
 \section{The essence of a design system}
 
-A design system may be considered distinct from a component library in that the former often gives guidelines on styling,
+There are tiers to the design system's repeatable subunits. At the most basic level are completely unstyled components: headless components. A component library may be composed of just headless components, or it may be fairly constrained already in terms of CSS styling of color, proportion, sizes, colors, shadows, and more. At an even higher level includes color theming, typography, etc.
+
+Perhaps the above are superfluous due to Tailwind CSS already having those requirements. If the design system does not easily allow styles to
+
+Maybe explain there are multiple layers
 
 
-Now comes the hard part of understanding design systems: give a field with many different species, come together to find a taxonomy
+\section{When theming Vue components, some are hospital software and some is not}
+
+% styles table, styles typography, styles etc. ignore the ones I think are bad
 
 
-\section{Do design systems have subcategories?}
-
-One common practice is giving a bunch of components in an alphabetical list. Another one, which is more common in Chinese Vue systems is categorizing them.
-
-1. Here is a list of attempting to cateogrize component.gallery
+\section{In-depth comparison of frequency of all component types}
 
 
-2. We know first of all there is the input, state, and output categorization which can be done to humans themselves.
+% \section{Do design systems have subcategories?}
+
+% One common practice is giving a bunch of components in an alphabetical list. Another one, which is more common in Chinese Vue systems is categorizing them.
+
+% 1. Here is a list of attempting to cateogrize component.gallery
 
 
-3. Or, here is the attempt ot categorizing component.gallery using the Chinese style
+% 2. We know first of all there is the input, state, and output categorization which can be done to humans themselves.
+
+
+% 3. Or, here is the attempt ot categorizing component.gallery using the Chinese style
 
 
 % \section{On the progress and evolution of UIs}
