@@ -12,6 +12,15 @@
 \usepackage{booktabs} % <-- ADD THIS LINE
 \usepackage{graphicx} % Required for \rotatebox
 
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,    % Color of internal links (sections, etc.)
+    filecolor=magenta,
+    urlcolor=blue       % Color of external web links
+}
+
+
 % 3. Metadata
 % \title{Evaluation of LLMs in Generation of Primitive Components for Frontend Design Systems}
 \title{On Frontend Frameworks, Design Systems, and AI with Commentary on Political and Technological Means}
@@ -184,6 +193,9 @@ These same enduring advantages that Cline has are in similar fashion likely to a
 
 
 
+\section{List of design systems}
+
+Here are a list of design systems which are well-known in Vue, their histories, and initial impressions of it. They serve as the basis for future investigations in this thesis.
 
 \section{List of design systems}
 
@@ -193,9 +205,15 @@ Here are a list of design systems which are well-known in Vue, their histories, 
 
 A relatively generic landing page with text and buttons appears once someone navigates to the main page. Clicking the action button leads one to see a documentation-like page with sidebar page sections on the left and a table of contents on the right. An unplugin plugin for build systems that auto-imports PrimeVue components is available, as are a variety of color and theming methods. Components are grouped under Form (27), Button (3), Data (10), Panel (11), Overlay (7), File (1), Menu (8), Chart (1), Messages (2), Media (4), and Misc (17) for a total of 91. There are then a variety of related but in my opinion unnecessary sections: forms, icons, Volt UI, a Figma UI kit, a theme designer, a template, PrimeBlocks.
 
+PrimeVue is developed by PrimeTek Informatics, a company founded by Cagatay Civici in Turkey. The library is part of a larger suite of UI suites (including PrimeFaces for Java, PrimeNg for Angular, and PrimeReact) that share a similar architectural philosophy. The goal was to provide a vendor-agnostic, enterprise-grade UI library that allowed developers to switch frameworks without losing their UI methodology. It was initially released in 2019. The repository has over 14,184 commits.
+\\ \url{https://github.com/primefaces/primevue}
+
 \subsection{ElementPlus}
 
 Impression of aesthetics upon immediate loading are not extremely cohesive or promising, but it is acceptable. ElementPlus has Figma UI kits like PrimeVue, but puts it in its own "Resource" top navbar section rather than along the left sidebar. It categorizes things into Basic (12), Configuration (1), Form (24), Data (23), Navigation (9), Feedback (10), and Others (2) for a total of 81 components.
+
+ElementPlus is the Vue 3 successor to Element UI, a widely popular Vue 2 library. The original Element UI was developed by the frontend team at Eleme, a major food delivery service in China (now part of the Alibaba ecosystem). While the original team has somewhat dispersed, ElementPlus is largely community-maintained, aiming to port the original desktop-first aesthetics to the modern Vue 3 tech stack. It was released in 2020. The repository has over 7,084 commits.
+\\ \url{https://github.com/element-plus/element-plus}
 
 % \subsection{Vuestic}
 
@@ -206,45 +224,83 @@ Impression of aesthetics upon immediate loading are not extremely cohesive or pr
 
 Quasar aesthetically seems very similar to ElementPlus. It is messy, unstructed, and contains much extraneous information. Vue components are just one of many sections, as it seems to want to build for multiple devices and apps at the same time rather being just a component library.
 
+Quasar was created by Razvan Stoenescu in 2015. Unlike other libraries which focus solely on UI components, Stoenescu built Quasar as a complete framework to solve the "write once, deploy everywhere" problem. His motivation was to allow developers to generate SPAs, PWAs, SSR apps, Mobile Apps (via Cordova/Capacitor), and Electron apps from a single Vue codebase, heavily relying on Material Design guidelines. The project is longstanding with over 15,078 commits.
+\\ \url{https://github.com/quasarframework/quasar}
+
 \subsection{shadcn-vue}
 
 This is a clone of the well-known shadcn/ui for React, but for Vue. There are a few sections which seem unrelated to the component library such as Blocks, Charts, Themes, and Colors (which is duplicate information that already exists on the default Tailwind site). Components are unordered.
+
+This library is an unofficial port of the React-based `shadcn/ui` (created by a developer known as shadcn). The Vue port is maintained primarily by Mujahid Anuar (zernonia) and the Radix Vue team. The philosophy here is distinct from other libraries: it is not an installable dependency but rather a collection of copy-pasteable components built on top of Tailwind CSS and headless primitives, designed to give developers total ownership of the code. It appeared in 2023 and has approximately 809 commits.
+\\ \url{https://github.com/radix-vue/shadcn-vue}
 
 \subsection{Nuxt UI}
 
 The page loads but the design is somewhat tacky. A moving walkway of pictures appears on the right but the animation ease is linear giving it a boring feel. The spacing of the pictures relative to the screen appears not so good. Like other design systems, there a bit too many extra unnecessary sections. The component categorization is different compared to the other libraries.
 
+Nuxt UI is developed by NuxtLabs, the company behind the Nuxt meta-framework, with Benjamin Canac as a lead author. It was created to provide an opinionated, "batteries-included" UI solution specifically for the Nuxt ecosystem. It is built as a wrapper around Headless UI and Tailwind CSS, intending to streamline the configuration process for Nuxt developers who previously had to wire these technologies together manually. The current version was released in 2023. The repository has over 4,937 commits.
+\\ \url{https://github.com/nuxt/ui}
+
 \subsection{Radix Vue}
 
 Radix Vue, similar to Flowbite Vue 3, seems to have a VitePress page. Components are ungrouped, for a total of 43 different types.
 
+Radix Vue is led by Mujahid Anuar. It is a port of Radix UI (a React library developed by WorkOS). The project’s goal is to provide unstyled, accessible UI primitives. It serves as a low-level foundation upon which other libraries (like shadcn-vue) are built, focusing entirely on functionality and accessibility compliance (WAI-ARIA) rather than visual design. It was released in 2023 and has over 1,500 commits.
+\\ \url{https://github.com/radix-vue/radix-vue}
+
 \subsection{Reka UI}
 
+Though made by the founders of Radix Vue, the new landing page is a lot more generic and contains superfluous information. There are only three categories: Form (14), Dates (7), and General (23) for a total of 44 components which numerically does not differ much from Radix Vue.
 
+Reka UI is a recent rebranding of the core functionality behind Radix Vue. As Radix Vue gained popularity, the maintainers separated the core logic from the specific "Radix" branding (which is owned by WorkOS) to create a framework-agnostic headless layer. It is essentially the engine room that powers the accessible primitives mentioned in the Radix Vue section, maintained by the same open-source team. The rebranding occurred in 2024.
+
+There are 1,775 commits.
+\\ \url{https://github.com/unovue/reka-ui}
 
 \subsection{Vuetify}
 Vuetify loads and the page is kind of messy, similar to ElementPlus. There is an annoying animation when navigating between pages.
 
+Vuetify was created by John Leider in 2016. For a long time, it was the de-facto UI library for Vue 2. Leider’s motivation was to provide a strict, pixel-perfect implementation of Google’s Material Design specification for Vue. It operates on a donation and sponsorship model and is known for having a massive API surface area to handle almost every UI edge case via configuration props. The repository is very active with over 17,564 commits.
+\\ \url{https://github.com/vuetifyjs/vuetify}
+
 \subsection{Naive UI}
 Naive UI has a nice and simple landing page. Good styling, color, and proportion. The categorization of components are Common (15), Data Input (21), Data Display (21), Navigation (9), Layout (6), Utility (4), and Config (3).
+
+Naive UI was developed by TuSimple, an autonomous trucking technology company, with the lead developer being `07akioni`. The library was written in TypeScript from the ground up (unlike many competitors that retrofitted it). Its creation was driven by the need for a highly performant, customizable component library that didn't rely on the runtime size overhead of Tailwind or the strict aesthetic of Material Design. It was released in 2019. The repository has 9,178 commits which seems quite high.
+\\ \url{https://github.com/tusen-ai/naive-ui}
 
 \subsection{Ant Design Vue}
 
 The page immediately seems to load to a sidebar and main section for the components, there is a link to what seems like a poorly designed store, and there are also some docs in the header. The components are categorized as General (3), Layout (5), Navigation (7), Data Entry (17), Data Display (22), Feedback (10), and Other (4).
 
+Ant Design Vue is the Vue implementation of the Ant Design specification, maintained largely by Tangjinzhou. The original design language comes from Ant Group (an affiliate of Alibaba) and is also ubiquitous in the Chinese React ecosystem. It was released around 2017. The repository has 5,302 commits.
+\\ \url{https://github.com/vueComponent/ant-design-vue}
+
+% This port allows Vue developers to utilize the same "enterprise-level" design language, which focuses on certainty, meaning, and growth in B2B applications.
+
 \subsection{Arco Design}
 Arco Design upon loading is completely in Chinese, and it has both Vue and React components. It feels kind of cluttered upon loading, having many links to other sections such as PrimeVue or ElementPlus. There are 74 total components in total with General (4), Layout (4), Data Display (19), Data Entry (21), Feedback (10), Navigation (6), Other (10).
+
+Arco Design is the design system created by ByteDance, the parent company of TikTok/Douyin. It was open-sourced to provide a comprehensive design solution that bridges the gap between design and development. It competes directly with Ant Design in the enterprise space, reflecting the internal tools used to build ByteDance's massive portfolio of products. The Vue version was released in 2021. The repository has approximately 1,844 commits.
+\\ \url{https://github.com/arco-design/arco-design-vue}
 
 \subsection{TDesign}
 The loading page is a bit slow likely as it is hosted in Chinese servers. A mix of both English and Chinese appears on the main page, with some logos and attestations. There seem to be web and mobile versions, along with Vue 2/Vue 3, WeChat Mini Programs, and a React version too. The components are Base (3), Layout (4), Navigation (10), Input (21), Data Display (24), and Notifications (8) with total 70.
 
+TDesign is the enterprise design system from Tencent. Given Tencent's dominance in the Chinese market (WeChat, QQ, Gaming), TDesign was created to unify the user experience across their vast array of internal and external applications. It emphasizes consistency across different platforms, specifically catering to the WeChat Mini Program ecosystem alongside standard web frameworks. The Vue Next (Vue 3) version was released in 2021. The repository has over 3,500 commits.
+\\ \url{https://github.com/Tencent/tdesign-vue-next}
 
 \subsection{Flowbite Vue 3}
 
 A minimalistic yet well-styled VitePress site appears. This includes only the components and they are categorized Components (25), Form (9), Typography (5), and Utils (2) for a total of 41.
 
-\section{A review of the above design systems}
-Based on values of simplicity, straightforwardness, no superfluous information, and high quality design, I am eliminating Quasar and ElementPlus. They are too general and the aesthetics are poor. PrimeVue, shadcn-vue, Nuxt UI, Ant Design Vue, Arco Design, and TDesign are decent. Flowbite Vue 3, Naive UI, and Radix UI are good.
+Flowbite Vue is an open-source library created by Themesberg. It is essentially a Vue-specific wrapper around Flowbite, which is a popular component library for Tailwind CSS. It was released in 2021. The repository has over 500 commits.
+\\ \url{https://github.com/themesberg/flowbite-vue}
+
+% The creators aimed to bridge the gap between utility-first CSS (Tailwind) and component-based development, allowing developers to use pre-built UI elements that are strictly based on Tailwind utility classes.
+
+
+
 
 
 \begin{table}[ht]
@@ -288,9 +344,21 @@ Based on values of simplicity, straightforwardness, no superfluous information, 
 \end{table}
 
 
-\section{Analysis of Component Categories}
+\section{Analysis of Libraries}
 
-\subsection{Repeated and Common Categories}
+\subsection{Initial aesthetic impressions}
+
+As a general rule, clear design is associated with clear abstractions. Using software with unclear abstractions present additional cognitive load: there may be multiple ways to do things, the instructions for how to do things may be unclear, or the syntax is messy and inefficient.
+
+There are some exceptions: many low-level programming languages and libraries often use mdBook, which creates not exactly what one would call a well-proportioned or modern design, but it is clarid and distinct in its own way in the way antiques have charm while modern grey-laminate flooring housing does not.
+
+For these reasons, the above design system libraries are first evaluated on their presentation. Furthermore, as developers will constantly scan back and forth between documentation and app, having an ugly website with annoyances such as unnecessary animations or page loads will make discerning developers displeased.
+
+Because Quasar is not just a component library or design system but meant to develop multiple types of apps, I am eliminating it. Vuetify features an annoying fade animation when clicking between pages. The other libraries: ElementPlus, shadcn-vue, Nuxt UI, Reka UI, Ant Design Vue, Arco Design, and TDesign seem to fall somewhere in the middle. Reasonably good, but they extend their domain to many other things such as Vue 2 and React, trading clarity and conciseness for expansive coverage. Flowvite Vue 3, Radix UI, and Naive UI though simple, run the opposite risk of not having the specific component needed in complex projects but represent a good starting point due to simplicity.
+
+
+
+\subsection{Analysis of Categorizations}
 Based on the table, a clear consensus exists around a few core concepts, even if the exact naming differs:
 
 \begin{itemize}
@@ -383,7 +451,7 @@ Maybe explain there are multiple layers
 
 % Moreover, how does creating these categories help us with design systems?
 
-\section{A new taxonomy}
+\section{A new component library taxonomic suggestion}
 
 When designing a taxonomy one must ensure it captures the essence of what is important and relevant. A climate taxonomy on average plant leaf size is likely to be a poor predictor of environmental landscapes. These features and attributes may be a numeric sliding scale, or they may be categorical from a finite set of options such as the Köppen-Geiger where one picks from climate, precipitation, and temperature severity during summer or winter (optional) to create a key such as ET (Polar + Tundra) or Cw (Temperate + Dry winter).
 
