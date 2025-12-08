@@ -353,47 +353,48 @@ Because Quasar is not just a component library or design system but meant to dev
 
 
 \subsection{Analysis of Categorizations}
-Based on the table, a clear consensus exists around a few core concepts, even if the exact naming differs:
+Based on the table, a clear consensus exists around a few core concepts, even if the exact naming differs.
 
-\begin{table}[H]  % <--- CHANGE [ht] TO [H]
+
+\begin{table}[H]
     \centering
-    \caption{Comparison of Component Categories Across Vue Design Systems}
-    \label{tab:component-categories}
-    % Updated command to take 1 argument explicitly
-    \newcommand*\rot[1]{\rotatebox{90}{#1}}
+    \setlength{\tabcolsep}{2pt}
+    \newcommand*\rot[1]{\multicolumn{1}{c}{\rotatebox{65}{\footnotesize #1}}}
 
-    \begin{tabular}{@{}lccccccc@{}}
-        \toprule
-        \textbf{Category}    & \rot{PrimeVue} & \rot{ElementPlus} & \rot{Naive UI} & \rot{Ant Design Vue} & \rot{Arco Design} & \rot{TDesign} & \rot{Flowbite Vue 3} \\
+    \begin{tabular}{@{}lcccccccccc@{}}
+        % \toprule
+        \textbf{Category Label} & \rot{PrimeVue} & \rot{ElementPlus} & \rot{Naive UI} & \rot{Ant Design} & \rot{Arco Design} & \rot{TDesign} & \rot{Flowbite} & \rot{Vuetify} & \rot{Nuxt UI} & \rot{Reka UI} \\
         \midrule
-        % Core & Foundational
-        General / Basic      &                & $\bullet$         & $\bullet$      & $\bullet$            & $\bullet$         & $\bullet$     &                      \\
-        Layout               &                &                   & $\bullet$      & $\bullet$            & $\bullet$         & $\bullet$     &                      \\
-        Navigation / Menu    & $\bullet$      & $\bullet$         & $\bullet$      & $\bullet$            & $\bullet$         & $\bullet$     &                      \\
+        Data Entry / Form       & $\bullet$      & $\bullet$         & $\bullet$      & $\bullet$        & $\bullet$         & $\bullet$     & $\bullet$      & $\bullet$     & $\bullet$     & $\bullet$     \\
+        Data Display / Data     & $\bullet$      & $\bullet$         & $\bullet$      & $\bullet$        & $\bullet$         & $\bullet$     &                & $\bullet$     & $\bullet$     &               \\
+        Navigation / Menu       & $\bullet$      & $\bullet$         & $\bullet$      & $\bullet$        & $\bullet$         & $\bullet$     &                & $\bullet$     & $\bullet$     &               \\
+        Feedback / Messages     & $\bullet$      & $\bullet$         &                & $\bullet$        & $\bullet$         & $\bullet$     &                & $\bullet$     &               &               \\
+        General / Basic         &                & $\bullet$         & $\bullet$      & $\bullet$        & $\bullet$         & $\bullet$     &                &               &               & $\bullet$     \\
+        Layout                  &                &                   & $\bullet$      & $\bullet$        & $\bullet$         & $\bullet$     &                &               & $\bullet$     &               \\
+        Other / Misc            & $\bullet$      & $\bullet$         & $\bullet$      & $\bullet$        & $\bullet$         &               &                &               &               &               \\
         \midrule
-        % Data Interaction
-        Data Entry / Form    & $\bullet$      & $\bullet$         & $\bullet$      & $\bullet$            & $\bullet$         & $\bullet$     & $\bullet$            \\
-        Data Display         & $\bullet$      & $\bullet$         & $\bullet$      & $\bullet$            & $\bullet$         & $\bullet$     &                      \\
-        \midrule
-        % User Feedback
-        Feedback / Messages  & $\bullet$      & $\bullet$         &                & $\bullet$            & $\bullet$         & $\bullet$     &                      \\
-        \midrule
-        % Specific / Granular
-        Button               & $\bullet$      &                   &                &                      &                   &               &                      \\
-        Panel                & $\bullet$      &                   &                &                      &                   &               &                      \\
-        Overlay              & $\bullet$      &                   &                &                      &                   &               &                      \\
-        File                 & $\bullet$      &                   &                &                      &                   &               &                      \\
-        Chart                & $\bullet$      &                   &                &                      &                   &               &                      \\
-        Media                & $\bullet$      &                   &                &                      &                   &               &                      \\
-        Typography           &                &                   &                &                      &                   &               & $\bullet$            \\
-        \midrule
-        % Meta & Utility
-        Configuration/Config &                & $\bullet$         & $\bullet$      &                      &                   & $\bullet$     &                      \\
-        Utility / Utils      &                &                   & $\bullet$      &                      &                   & $\bullet$     & $\bullet$            \\
-        Other / Misc         & $\bullet$      & $\bullet$         & $\bullet$      & $\bullet$            & $\bullet$         &               &                      \\
+        \textit{Unique Labels}  &                &                   &                &                  &                   &               &                &               &               &               \\
+        Button                  & $\bullet$      &                   &                &                  &                   &               &                &               &               &               \\
+        Chart                   & $\bullet$      &                   &                &                  &                   &               &                &               &               &               \\
+        Containment             &                &                   &                &                  &                   &               &                & $\bullet$     &               &               \\
+        Element                 &                &                   &                &                  &                   &               &                &               & $\bullet$     &               \\
+        Components              &                &                   &                &                  &                   &               & $\bullet$      &               &               &               \\
+        Page                    &                &                   &                &                  &                   &               &                &               & $\bullet$     &               \\
+        Selection               &                &                   &                &                  &                   &               &                & $\bullet$     &               &               \\
+        Overlay                 & $\bullet$      &                   &                &                  &                   &               &                &               & $\bullet$     &               \\
+        Panel                   & $\bullet$      &                   &                &                  &                   &               &                &               &               &               \\
+        File                    & $\bullet$      &                   &                &                  &                   &               &                &               &               &               \\
+        Pickers / Dates         &                &                   &                &                  &                   &               &                & $\bullet$     &               & $\bullet$     \\
+        Images / Media          & $\bullet$      &                   &                &                  &                   &               &                & $\bullet$     &               &               \\
+        Typography              &                &                   &                &                  &                   &               & $\bullet$      &               &               &               \\
+        Config / Providers      &                & $\bullet$         & $\bullet$      &                  &                   & $\bullet$     &                & $\bullet$     & $\bullet$     &               \\
         \bottomrule
     \end{tabular}
+
+    \caption{Taxonomy Comparison: Component Categorization Labels}
+    \label{tab:taxonomy-comparison}
 \end{table}
+
 
 
 
@@ -413,7 +414,7 @@ Based on the table, a clear consensus exists around a few core concepts, even if
 These categories highlight the different philosophies or specializations of each library:
 
 \begin{itemize}
-    \item \texttt{PrimeVue} has the most granular categorization, with many groups that other libraries merge into broader categories. \texttt{Panel}, \texttt{Overlay}, \texttt{File}, \texttt{Chart}, \texttt{Media}, and \texttt{Button} are all separated into their own top-level categories, which is unique among this set.
+    \item \texttt{PrimeVue} has the most granular categorization, with many groups that other libraries merge into broader categories. \texttt{Panel}, \texttt{Overlay}, \texttt{File}, \texttt{Chart}, \texttt{Media}, and \texttt{Button} are all separated into their own top-level categories, which is unique among this set. \texttt{Reka UI} takes the opposite approach, grouping things into only 3 top-level categories. Some such as \texttt{shadcn-vue} only sort components alphabetically, having no cateoegires at all.
 
     \item \texttt{Flowbite Vue 3} is the only library with a dedicated \textbf{Typography} category.
 
@@ -424,9 +425,96 @@ These categories highlight the different philosophies or specializations of each
     \item \textbf{Other / Misc / Utils} are common catch-all categories for components that don't fit neatly elsewhere.
 \end{itemize}
 
+\subsection{On categorization}
+
+The categorization of these components can take an extreme (listing a new category for each group of new similar components, as per PrimeVue), or it can take the opposite extreme of not categorizing things at all. It is certain that as a component library grows, small groups of 2-5 components will appear which bear no resemblance to the major categories, such as PrimeVue's Media category of Carousel, Galleria, Image, and ImageCompare. To sort things alphabetically would break up these small categories and make things unmanageable, so despite small categories making the top level more verbose I believe they are preferable once the component library passes a certain size.
+
+\subsection{Nomenclature Patterns and Cultural Distinctions}
+
+A closer examination of category labels reveals a distinct linguistic split that aligns partially with the geopolitical origins of the libraries.
+
+There is a specific "Enterprise" nomenclature predominant in major Chinese commercial libraries (Ant Design, Arco, TDesign, Naive UI), which favors precise, noun-heavy descriptors like "Data Entry" and "Data Display." In contrast, Western-origin or community-led libraries (PrimeVue, Nuxt UI, Vuetify) tend to use shorter, functional terms like "Form" and "Data."
+
+\subsubsection{Data Entry vs. Form}
+This category represents the most distinct divergence in naming conventions.
+
+\begin{description}
+    \item[Data Entry / Data Input] \hfill \\
+        Used almost exclusively by Chinese enterprise-backed libraries. This likely reflects a B2B "management system" philosophy where the user is an operator entering data.
+        \begin{itemize}
+            \item \textbf{Ant Design Vue} (Data Entry)
+            \item \textbf{Arco Design} (Data Entry)
+            \item \textbf{Naive UI} (Data Input)
+            \item \textbf{TDesign} (Input)
+        \end{itemize}
+
+    \item[Form / Form Inputs] \hfill \\
+        Used by Western libraries and the community-driven ElementPlus. This terminology aligns closer to the HTML \texttt{<form>} tag and standard web development vernacular.
+        \begin{itemize}
+            \item \textbf{PrimeVue} (Form)
+            \item \textbf{Nuxt UI} (Form)
+            \item \textbf{Reka UI} (Form)
+            \item \textbf{Flowbite} (Form)
+            \item \textbf{Vuetify} (Form Inputs and Controls)
+            \item \textbf{ElementPlus} (Form) — \textit{Notably acts as a bridge, being Chinese-origin but using Western naming conventions.}
+        \end{itemize}
+\end{description}
+
+\subsubsection{Data Display vs. Data}
+\begin{description}
+    \item[Data Display] \hfill \\
+        Again, the explicit naming convention is found in the Chinese grouping.
+        \begin{itemize}
+            \item \textbf{Ant Design Vue}
+            \item \textbf{Arco Design}
+            \item \textbf{Naive UI}
+            \item \textbf{TDesign}
+        \end{itemize}
+
+    \item[Data] \hfill \\
+        A shorthand found in libraries that prioritize conciseness.
+        \begin{itemize}
+            \item \textbf{PrimeVue}
+            \item \textbf{ElementPlus}
+            \item \textbf{Nuxt UI}
+        \end{itemize}
+
+    \item[Data and Display] \hfill \\
+        \textbf{Vuetify} combines these concepts into a single verbose category.
+\end{description}
+
+\subsubsection{Feedback vs. Messages vs. Notifications}
+This category handles modals, toasts, and alerts, showing the most variance in naming.
+
+\begin{description}
+    \item[Feedback] \hfill \\
+        The most common term across both regions for interactive responses.
+        \begin{itemize}
+            \item \textbf{ElementPlus}
+            \item \textbf{Vuetify}
+            \item \textbf{Ant Design Vue}
+            \item \textbf{Arco Design}
+        \end{itemize}
+
+    \item[Messages] \hfill \\
+        Specific to \textbf{PrimeVue}, likely deriving from the Java/JSF heritage of PrimeFaces where "FacesMessages" were a core concept.
+
+    \item[Notifications] \hfill \\
+        Specific to \textbf{TDesign}.
+\end{description}
+
+\subsubsection{Navigation vs. Menu}
+\begin{description}
+    \item[Navigation] \hfill \\
+        The standard term used by the vast majority of libraries (ElementPlus, Nuxt UI, Vuetify, Naive UI, Ant Design, Arco, TDesign).
+
+    \item[Menu] \hfill \\
+        Specific to \textbf{PrimeVue}. This is an interesting deviation, as PrimeVue separates standard navigation elements (like Breadcrumbs) into a "Menu" category, implying a specific UI widget focus rather than an abstract navigation concept.
+\end{description}
 
 
-\section{The essence of a design system}
+
+\section{Opinions on each }
 
 There are tiers to the design system's repeatable subunits. At the most basic level are completely unstyled components: headless components. A component library may be composed of just headless components, or it may be fairly constrained already in terms of CSS styling of color, proportion, sizes, colors, shadows, and more. At an even higher level includes color theming, typography, etc.
 
@@ -435,12 +523,8 @@ Perhaps the above are superfluous due to Tailwind CSS already having those requi
 Maybe explain there are multiple layers
 
 
-\section{When theming Vue components, some are hospital software and some is not}
 
 % styles table, styles typography, styles etc. ignore the ones I think are bad
-
-
-\section{In-depth comparison of frequency of all component types}
 
 
 % \section{Do design systems have subcategories?}
@@ -508,29 +592,26 @@ Another taxonomic key that immediately stands out is the input/output distinctio
 Since components are likely to have multiple of these keys, the proper usage in a component library is not so much to group them into arbitrary categories from a multiplication of those keys but to perhaps have some sort of tab-search-multi group at the top so that one can find the proper components given their knowledge of the component's functionality. Artificial taxonomies just then become another thing people have to learn, getting them further away from what they need to build things.
 
 
-\section{Regarding the current classification of web components}
 
-Often there is a data input, data output, write how do I feel abou this or they are listed alphabetically.
+% \section{Which design system components are replicated by native browser features?}
 
-\section{Which design system components are replicated by native browser features?}
-
-An overarching goal of any design system is to reduce complexity because the alternative is a bunch of unnamed components with numerous different names floating around one's web app. Thus, design systems should not increase the complexity of building web apps by adding more abstractions which are usable with browser features. Therefore the following is a list of components which have similar features in the browser and an elaboration upon them.
+% An overarching goal of any design system is to reduce complexity because the alternative is a bunch of unnamed components with numerous different names floating around one's web app. Thus, design systems should not increase the complexity of building web apps by adding more abstractions which are usable with browser features. Therefore the following is a list of components which have similar features in the browser and an elaboration upon them.
 
 
-\section{Are different active states necessary?}
+% \section{Are different active states necessary?}
 
-When designing a design system, it is often meant to be cohesive so that all potential use cases are covered. For a button this may include a primary, a secondary, a tertiary, a cancellation or destructive action, and so on.
+% When designing a design system, it is often meant to be cohesive so that all potential use cases are covered. For a button this may include a primary, a secondary, a tertiary, a cancellation or destructive action, and so on.
 
-The purpose of this section is to find which variants are necessary across different design systems and to list all of them.
-
-
-BASICALLY. I need to do this:
-For each design system, for each component, then for each component variant. Evaluate all of them. O(N3), then for each LLM which is O(1).
+% The purpose of this section is to find which variants are necessary across different design systems and to list all of them.
 
 
-\section{How is the efficacy of theming custom components?}
+% BASICALLY. I need to do this:
+% For each design system, for each component, then for each component variant. Evaluate all of them. O(N3), then for each LLM which is O(1).
 
-Components are evaluated for how easy it is to override or theme them.
+
+% \section{How is the efficacy of theming custom components?}
+
+% Components are evaluated for how easy it is to override or theme them.
 
 
 
