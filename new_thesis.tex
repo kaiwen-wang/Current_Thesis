@@ -24,7 +24,7 @@
 
 % 3. Metadata
 % \title{Evaluation of LLMs in Generation of Primitive Components for Frontend Design Systems}
-\title{On Frontend Frameworks, Design Systems, and AI with Commentary on Political and Technological Means}
+\title{On Frontend Frameworks, Component Libraries, and AI with Commentary on Political and Technological Means}
 \author{Kaiwen Wang}
 \date{December 12, 2025}
 
@@ -51,7 +51,7 @@
 % As humans move up the technology tree, things which were previously novel become repeatable subunits for the next layer. For example, there is little more understanding needed to innovate screws---most shapes exist and engineering projects select from an existing set of them. To not 'reinvent the wheel' is a comparative advantage for any organization.
 
 
-This thesis is about technology, or more specifically, frontend design systems and component libraries in Vue. I chose this specific topic out of my experience in frontend and coming from a fine arts high school, and because I believe the earlier stages before a browser: cell phones, computers, operating systems, browsers, and even the frontend framework itself have reached a level of maturity where systematic analysis would be unnecessary. Though I find myself capable of incrementalism, I find systems thinking to be what I both excel at and what is most lacking today. Of particular relevance in our present and future is the influence of politics upon technology in a re-emergent decade of two-pole competition and the development of Large Language Models (LLMs), colloquially referred to as AI.
+This thesis is about technology, or more specifically, frontend design systems and component libraries in Vue. I chose this specific topic out of my experience in frontend and having certain frustrations that there was no easy standardization when building a web app. I believe the earlier stages before a browser: cell phones, computers, operating systems, browsers, and even the frontend framework itself have reached a level of maturity where this type of analysis for the benefit of practitioners would be would be unnecessary. Though I find myself capable of incrementalism for deep and specific research on an already mature topic, I find systems thinking to be what I both excel at and what is most lacking today. Of particular relevance in our present and future is the influence of politics upon technology in a re-emergent decade of two-pole competition and the development of Large Language Models (LLMs), colloquially referred to as AI.
 
 Now, what is the nature of the world today, and what best describes it? I characterize it as \textit{superficial variety with structural uniformity}. In our day and age we are presented with myraid of choices; we may see numerous brands of fast foods: McDonalds, Burger King, Wendy's, or one might go to a supermarket and see countless options of foods and brands, or even further one might see numerous styles and brands of clothes but the underlying stitching and fabric material remains the same.
 
@@ -61,7 +61,7 @@ Because fast food restaurants must work under constraints such as the availabili
 
 Processed foods in a supermarket are a wrapper around bleached wheat as per USDA standards and vegetable oils: look at the ingredients list and the all too familiar "Enriched Flour (Wheat Flour, Niacin, Reduced Iron, Vitamin B1 [Thiamin Mononitrate], Vitamin B2 [Riboflavin], Folic Acid)" plus "Soybean Oil" appears. Because the legal system of an administrative zone produces uniformity in foodstuffs, any sense of difference is an illusion once the wrapper is closely scrutinized.
 
-This tendency of superficial variety and structural uniformity is characteristic of the modern times not only in supermarkets, restaurants, clothing, but also human personalities, news sites, choices in technologies, and styles of living across geographies. Google may present what seems to be an independent bevy of sources, yet all of them receive the same press briefing in the background. The automobile-city apartment-internet-supermarket life is mainstream everywhere, and what puts one place above another tends to be small incremental improvements such as roads and cars being slightly nicer rather than something completely orthogonal.
+This tendency of superficial variety and structural uniformity is characteristic of the modern times not only in supermarkets, restaurants, clothing, but also human personalities, news sites, choices in technologies, and styles of living across geographies. Google may present what seems to be an independent bevy of sources, yet all of them receive the same press briefing in the background. The automobile-city apartment-internet-supermarket life is mainstream everywhere, and what puts one place above another tends to be small improvements such as roads and cars being slightly nicer rather than something completely orthogonal.
 
 The ability to see past this false differentiation is necessary to not get caught seemingly running and making much noise but in reality standing still making no progress at all. When one wants to innovate, there lies infinite combination of items one can find themselves trapped in on the surface level. One could categornize infinite types of foods: or realize that they distill down to proteins, fats, and sugars.
 
@@ -139,7 +139,7 @@ My purpose in explaining these levels is to show the iterative and accumulative 
 Many AI website builders such as Lovable, v0, or Bolt are often used to create entire websites from a prompt, where further changes are made by inspecting the app visually and requesting further changes through text. These in my experience create unmaintainable websites despite initially satisfactory appearing interfaces for a few reasons: (1) appearing overly generic, (2) the amount of code generated exceeds the cognitive ability of the person who generated it to understand it, maintain it, and extend it (a) in both its usage and (b) the origin and nature of the dependencies used.
 
 
-The reason that appearing overly generic is a problem is because dimensionality reduction destroys important yet pertinent information. It is easier to distinguish quality between three different software products on their website than three different Github READMEs, just as it is easier to distinguish people based on their overall mannerisms and tendencies than a text biography. Therefore, generating websites which are not distinguished qualitatively presents a negative signaling indicator to users of that product, where the benefit of the trend inversely scales with the amount of people who are able to do it.
+The reason that appearing overly generic is a problem is because dimensionality reduction destroys important yet pertinent information. It is easier to distinguish quality between three different software products on their website than three different Github READMEs, just as it is easier to distinguish people based on their overall mannerisms and tendencies than a text biography. Therefore, generating websites which are not distinguished qualitatively presents a negative signaling indicator to users of that product, where the benefit of the trend inversely scales with the amount of people who are able to do it. However, many present web apps are of suboptimal quality: even if one were to use a design system which appears generic, the performance increases would distinguish it apart from other apps.
 
 The cognitive downside of AI website builders mainly presents itself in structure and components.
 Here is a colloquial dialogue of why AI in its current usage fails to meet quality frontend needs: "ok, you try to build something with AI, but it's crappy. So then you try to use a design library you don't really understand but hope to understand. That's still not much better, and you're lost in the components. You then try to one-shot all your own components for a design system, but that's inconsistent. So this thesis standardizes the different components, they are written out, tell people what is necessary for each of them, and see how good LLMs are at making them."
@@ -154,11 +154,10 @@ From a distant and teleological future perspective, it does matter greatly wheth
 
 
 
-\chapter{Design System Clarified}
+\chapter{On Component Libraries and Design Systems}
 
-\section{Design System or Component Library?}
 
-There are two terms which are
+Component libraries tend to be a subset of design systems, which most often includes guidelines on colors, typography, text register, and usage of components such as specifying how the logo may or may not be used. There is some overlap as component libraries can be headless or styled, which reaches into the appearance part of design systems but not the usage of them. The two options for a software developer seem to be taking a complex design system and paring it back, or building up styling from a headless or barebones library. The two terms are used relatively interchangeably as follows.
 
 \section{What frontend Framework?}
 
@@ -170,7 +169,7 @@ It is easy for one to say: learn this, learn that, use this stack, use that tool
 
 Vercel has gradually acquired much of the ecosystem around React, including the acquisition of Svelte and Nuxt. Whereas Svelte 4 previously declared variables with a simple \texttt{"let x = 1,"} Svelte 5 after the acquisition now is similar to React with \texttt{"let x = \$state(1)."} The acquisiton of Nuxt, I believe, is meant to implicitly align conventions of Vue with that of React downstream of Vue itself, likely as Vue itself could not be acquired.
 
-Despite the claims that this is meant for open source, political realists know it is actions and presentations rather than words which determine how one is perceived. I believe that the maintainers of React possess an ethnic chauvinism as indicated by believing English as a language that stands alone amongst all and Guillermo Rauch's endorsement of Benjamin Netanyahu. I have encountered this attitude numerous times in talking with people from San Francisco and other coastal corridors. The religion of the leader, generally, is the religion of the land and the subordinates.
+Despite the claims that this is meant for open source, political realists know it is actions and presentations rather than words which determine how one is perceived. I believe that the parts of the ecosystem related to React possess an ethnic chauvinism as indicated by believing English as a language that stands alone amongst all and Guillermo Rauch's endorsement of Benjamin Netanyahu. I have encountered this attitude numerous times in talking with people from San Francisco and other coastal corridors. The religion of the leader, generally, is the religion of the land and the subordinates.
 
 By failing to create a universal set of standards predicated upon the common unity of man such as open-source software does but instead one centered around one social-demographic group, there is a likelihood of splintering the software world into blocs. In some ways this writing is contributing to it. The sensitivity of the rest of the world toward "fifth generational warfare" and the role that the internet, the browser, frontend web frameworks, and design has in shaping the attitudes and beliefs of the masses means that the politicization of React has heightened political and social consequences.
 
@@ -196,9 +195,9 @@ These same enduring advantages that Cline has are in similar fashion likely to a
 % plus the constant acquisitions of other works in this space such as Svelte or Nuxt, bringing them more in line with React conventions such as state or effect, whereas before it allowed one to declare the variable directly.
 
 
-\section{List of design systems}
+\section{List of design systems/component libraries}
 
-Here are a list of design systems which are well-known in Vue, their histories, and my initial impressions of it. They serve as the basis for future investigations in this thesis. This list aims to be exhaustive, though at present it is not perfectly complete.
+Here are a list of them which are well-known in Vue, their histories, and my initial impressions of it. They serve as the basis for future investigations in this thesis. This list aims to be exhaustive, though at present it is not perfectly complete.
 
 \subsection{PrimeVue}
 
@@ -250,6 +249,9 @@ Nuxt UI is developed by NuxtLabs, the company behind the Nuxt meta-framework, wi
 Radix Vue, similar to Flowbite Vue 3, seems to have a VitePress page. Components are ungrouped, for a total of 43 different types.
 
 Radix Vue is led by Mujahid Anuar. It is a port of Radix UI (a React library developed by WorkOS). The project’s goal is to provide unstyled, accessible UI primitives. It serves as a low-level foundation upon which other libraries (like shadcn-vue) are built, focusing entirely on functionality and accessibility compliance (WAI-ARIA) rather than visual design. It was released in 2023 and has over 1,500 commits.
+
+
+Radix Vue itself may be discontinued and turned into Reka UI as the Github repo redirects.
 \\ \url{https://github.com/radix-vue/radix-vue}
 \\ \url{https://www.radix-vue.com/}
 
@@ -257,11 +259,24 @@ Radix Vue is led by Mujahid Anuar. It is a port of Radix UI (a React library dev
 
 Though made by the founders of Radix Vue, the new landing page is a lot more generic and contains superfluous information. There are only three categories: Form (14), Dates (7), and General (23) for a total of 44 components which numerically does not differ much from Radix Vue.
 
+
+
 Reka UI is a recent rebranding of the core functionality behind Radix Vue. As Radix Vue gained popularity, the maintainers separated the core logic from the specific "Radix" branding (which is owned by WorkOS) to create a framework-agnostic headless layer. It is essentially the engine room that powers the accessible primitives mentioned in the Radix Vue section, maintained by the same open-source team. The rebranding occurred in 2024.
 
 There are 1,775 commits.
 \\ \url{https://github.com/unovue/reka-ui}
 \\ \url{https://reka-ui.com/}
+
+The documentation header has similarity between Reka UI and Nuxt UI. Upon investigation it seems that when Nuxt UI v3 was built, Headless UI (maintained by Tailwind) was swapped for Reka UI.
+
+\begin{center}
+    \includegraphics[width=\linewidth]{SCR-20251209-lvee.png}
+\end{center}
+
+\begin{center}
+    \includegraphics[width=\linewidth]{SCR-20251209-lvid.png}
+\end{center}
+
 
 \subsection{Vuetify}
 Vuetify loads and the page is kind of messy, similar to ElementPlus. There is an annoying animation when navigating between pages. The categories are Containment (13), Navigation (10), Form Inputs and Controls (15), Data and Display (10), Selection (7), Feedback (12), Images and Icons (5), Pickers (3), and Providers (3) for a total of 78.
@@ -373,7 +388,6 @@ Based on the table, a clear consensus exists around a few core concepts, even if
         Layout                  &                &                   & $\bullet$      & $\bullet$        & $\bullet$         & $\bullet$     &                &               & $\bullet$     &               \\
         Other / Misc            & $\bullet$      & $\bullet$         & $\bullet$      & $\bullet$        & $\bullet$         &               &                &               &               &               \\
         \midrule
-        \textit{Unique Labels}  &                &                   &                &                  &                   &               &                &               &               &               \\
         Button                  & $\bullet$      &                   &                &                  &                   &               &                &               &               &               \\
         Chart                   & $\bullet$      &                   &                &                  &                   &               &                &               &               &               \\
         Containment             &                &                   &                &                  &                   &               &                & $\bullet$     &               &               \\
@@ -397,7 +411,6 @@ Based on the table, a clear consensus exists around a few core concepts, even if
 
 
 
-
 \begin{itemize}
     \item \textbf{Data Entry / Form:} This is the most universal category, present in every single listed library that uses categorization. It represents all components used for user input (inputs, selects, checkboxes, etc.).
 
@@ -414,7 +427,7 @@ Based on the table, a clear consensus exists around a few core concepts, even if
 These categories highlight the different philosophies or specializations of each library:
 
 \begin{itemize}
-    \item \texttt{PrimeVue} has the most granular categorization, with many groups that other libraries merge into broader categories. \texttt{Panel}, \texttt{Overlay}, \texttt{File}, \texttt{Chart}, \texttt{Media}, and \texttt{Button} are all separated into their own top-level categories, which is unique among this set. \texttt{Reka UI} takes the opposite approach, grouping things into only 3 top-level categories. Some such as \texttt{shadcn-vue} only sort components alphabetically, having no cateoegires at all.
+    \item \texttt{PrimeVue} has the most granular categorization, with many groups that other libraries merge into broader categories. \texttt{Panel}, \texttt{Overlay}, \texttt{File}, \texttt{Chart}, \texttt{Media}, and \texttt{Button} are all separated into their own top-level categories, which is unique among this set. \texttt{Reka UI} takes the opposite approach, grouping things into only 3 top-level categories. Some such as \texttt{shadcn-vue} only sort components alphabetically, having no categories at all.
 
     \item \texttt{Flowbite Vue 3} is the only library with a dedicated \textbf{Typography} category.
 
@@ -425,9 +438,6 @@ These categories highlight the different philosophies or specializations of each
     \item \textbf{Other / Misc / Utils} are common catch-all categories for components that don't fit neatly elsewhere.
 \end{itemize}
 
-\subsection{On categorization}
-
-The categorization of these components can take an extreme (listing a new category for each group of new similar components, as per PrimeVue), or it can take the opposite extreme of not categorizing things at all. It is certain that as a component library grows, small groups of 2-5 components will appear which bear no resemblance to the major categories, such as PrimeVue's Media category of Carousel, Galleria, Image, and ImageCompare. To sort things alphabetically would break up these small categories and make things unmanageable, so despite small categories making the top level more verbose I believe they are preferable once the component library passes a certain size.
 
 \subsection{Nomenclature Patterns and Cultural Distinctions}
 
@@ -512,15 +522,23 @@ This category handles modals, toasts, and alerts, showing the most variance in n
         Specific to \textbf{PrimeVue}. This is an interesting deviation, as PrimeVue separates standard navigation elements (like Breadcrumbs) into a "Menu" category, implying a specific UI widget focus rather than an abstract navigation concept.
 \end{description}
 
+\subsection{On Design System Infrastructure}
+
+I will use the term "infrastructure" as the catch-all term for important factors such as Typescript support, tree-shaking, installation method, and accessibility.
+
+Installation methods are currently: install a npm package and import, use a CDN (no tree-shaking, which unused components are bundled and reduces performance), or copy-paste, popularized by shadcn, (which can be done manually or with the CLI).
+
+Typescript is necessary because when configuring the component, Intellisense tells you what options you can put and if you put any invalid options into it.
+
+Accessibility refers to focus management and focus visibility (blue ring around items) which involve keyboard navigation, ARIA states (which may specify when something is open or closed to a screen reader), minimum touch target size and color contrast, and reduced motion.
+
+Finally is how styling is overriden in the component itself.
+
+\section{On categorization}
+
+The categorization of these components can take an extreme (listing a new category for each group of new similar components, as per PrimeVue), or it can take the opposite extreme of not categorizing things at all. It is certain that as a component library grows, small groups of 2-5 components will appear which bear no resemblance to the major categories, such as PrimeVue's Media category of Carousel, Galleria, Image, and ImageCompare. To sort things alphabetically would break up these small categories and make things unmanageable, so despite small categories making the top level more verbose I believe they are preferable once the component library passes a certain size.
 
 
-\section{Opinions on each }
-
-There are tiers to the design system's repeatable subunits. At the most basic level are completely unstyled components: headless components. A component library may be composed of just headless components, or it may be fairly constrained already in terms of CSS styling of color, proportion, sizes, colors, shadows, and more. At an even higher level includes color theming, typography, etc.
-
-Perhaps the above are superfluous due to Tailwind CSS already having those requirements. If the design system does not easily allow styles to
-
-Maybe explain there are multiple layers
 
 
 
@@ -571,7 +589,7 @@ Maybe explain there are multiple layers
 
 % Moreover, how does creating these categories help us with design systems?
 
-\section{A new component library taxonomic suggestion}
+\subsection{A new component library taxonomic suggestion}
 
 When designing a taxonomy one must ensure it captures the essence of what is important and relevant. A climate taxonomy on average plant leaf size is likely to be a poor predictor of environmental landscapes. These features and attributes may be a numeric sliding scale, or they may be categorical from a finite set of options such as the Köppen-Geiger where one picks from climate, precipitation, and temperature severity during summer or winter (optional) to create a key such as ET (Polar + Tundra) or Cw (Temperate + Dry winter).
 
@@ -579,7 +597,7 @@ Human abstractions, like may things, may be precise or imprecise. The periodic t
 
 Some may see the Köppen-Geiger scale and feel the lowercase letters (it uses both uppercase and lowercase letters to denote various climates) add to an imprecision and confusion because we are now indexing on another axis: letter capitalization. To remove what is necessary is essential and characteristic of clear thought and abstraction, for without it we confuse others with nonsensical abstractions we have created.
 
-2-category classifications are quite common. One consistent theme is the idea of input, output, and internal state. We can draw a bounding box around humans and our brain (internal state), enumerate our senses, and list the potential actions. Terminals have stdin and stdout, as do computers have inputs and outputs. Shannon's Model of Communication also uses this intput/output/internal state pattern.
+2-category classifications are quite common. One consistent theme is the idea of input, output, and internal state. We can draw a bounding box around humans and our brain (internal state), enumerate our senses, and list the potential actions. Terminals have stdin and stdout, as do computers have inputs and outputs. Shannon's Model of Communication also uses this input/output/internal state pattern.
 
 The Linux Filesystem Hierarchy distinguishes between variable files (stored in /var/ and change frequently during normal system use such as logs, state information, caches) and static files (stored in a variety of directories) which are often binaries, configurations, and dependencies.
 
@@ -591,6 +609,64 @@ Another taxonomic key that immediately stands out is the input/output distinctio
 
 Since components are likely to have multiple of these keys, the proper usage in a component library is not so much to group them into arbitrary categories from a multiplication of those keys but to perhaps have some sort of tab-search-multi group at the top so that one can find the proper components given their knowledge of the component's functionality. Artificial taxonomies just then become another thing people have to learn, getting them further away from what they need to build things.
 
+The Data Entry/Data Display categories have similarities with the aforementioned proposed input/output grouping while Navigation, Menu, General, or Layout are examples of common categorical groupings. Labels such as Button, Chart, Components, Page, Selection, Overlay, Panel, Images, and so on are also categorical groupings, but they are less common.
+
+A future design system categorization should thus reuse existing common taxonomic classifications but also consider a text/symbolic and input/output key.
+
+
+
+\section{On styling and overconstraints}
+
+A component library may come styled or headless with no styles. When it comes styled, it will often include features that represent additional common functionalities of that component: a button may include primary, secondary, icon positioning, loading states, or button size.
+
+
+% There are tiers to the design system's repeatable subunits. At the most basic level are completely unstyled components: headless components. A component library may be composed of just headless components, or it may be fairly constrained already in terms of CSS styling of color, proportion, sizes, colors, shadows, and more. At an even higher level includes color theming, typography, etc.
+
+% Perhaps the above are superfluous due to Tailwind CSS already having those requirements. If the design system does not easily allow styles to
+
+The installation method of design systems also matters greatly for styling. Shadcn was designed as a copy-paste solution while other methods are difficult to override, involving deep CSS selectors such as :deep() or !important and creating brittle, verbose code. Using tools like patch-package to override styles create version-dependent multiple-megabyte .patch files which must be committed to the git repository.
+
+Choosing which component library thus depends upon the needs of the user. If it is a cover page, marketing page, or for a use where aesthetics absolutely matter such as a museum or product website then headless components that are easily styled with Tailwind CSS are the best choice. If it is a complex dashboard that requires something functional over aesthetic, choosing something that has been established and has numerous types of components is a higher priority, so Ant Design Vue may be prefered over Reka UI (68 vs 44 components). The former also has previews of different component states, a lack of which can be annoying because you'd have to add any prop to your app to see what it really does.
+
+Thus, another table is given for the aforementioned component libraries on how many components they have, their installation method, and what styling method is used for them.
+
+
+\begin{table}[H]
+    \centering
+    \caption{Infrastructure, Installation, and Styling Overrides of Vue Libraries}
+    \label{tab:vue_infrastructure}
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{@{}lcllp{5cm}@{}}
+            \toprule
+            \textbf{Library}        & \textbf{Total} & \textbf{Installation} & \textbf{Override / Styling Method}  & \textbf{Component URL}                                         \\ \midrule
+
+            \textbf{PrimeVue}       & 91             & npm package           & Pass-Through (PT) props or Unstyled & \url{https://primevue.org/uikit}                               \\
+
+            \textbf{ElementPlus}    & 81             & npm package           & SCSS Vars / Deep Selectors          & \url{https://element-plus.org/en-US/component/button.html}     \\
+
+
+            \textbf{Naive UI}       & 79             & npm package           & JS Config Provider / CSS Vars       & \url{https://www.naiveui.com/en-US/os-theme/components/button} \\
+
+            \textbf{Ant Design Vue} & 68             & npm package           & Less Variables                      & \url{https://antdv.com/components/overview}                    \\
+
+            \textbf{Arco Design}    & 74             & npm package           & Less Variables                      & \url{https://arco.design/vue/component/button}                 \\
+
+            \textbf{TDesign}        & 70             & npm package           & CSS Variables                       & \url{https://tdesign.tencent.com/vue/components/overview}      \\
+
+            \textbf{Nuxt UI}        & 119            & Nuxt Module           & AppConfig / Tailwind Classes        & \url{https://ui.nuxt.com/components}                           \\
+
+            \textbf{shadcn-vue}     & 63             & Copy-Paste (CLI)      & Direct Code Modification (Tailwind) & \url{https://www.shadcn-vue.com/docs/components/accordion}     \\
+
+            \textbf{Flowbite Vue}   & 41             & npm package           & Tailwind Classes                    & \url{https://flowbite-vue.com/components/buttons/button/}      \\
+
+            \textbf{Radix Vue}      & 43             & npm package           & Headless                            & \url{https://www.radix-vue.com/components/accordion.html}      \\
+
+            \textbf{Reka UI}        & 44             & npm package           & Headless                            & \url{https://reka-ui.com/docs/components/accordion}            \\
+
+            \bottomrule
+        \end{tabular}%
+    }
+\end{table}
 
 
 % \section{Which design system components are replicated by native browser features?}
@@ -618,6 +694,10 @@ Since components are likely to have multiple of these keys, the proper usage in 
 \chapter{Generation of components using LLMs}
 
 In this section, a variety of primitive components are attempting to be benchmarked against a spec (which needs to be written) and the code will be released. First I need to choose the primitive components, write the spec, and then compare each leading LLM at generating them. Maybe can create a website that is a benchmark for them.
+
+First, I can list all the buttons for one category and just keep generating things.
+
+Two, I could list a spec of buttons according to component.gallery. Third, I could generate the spec using AI. Then generate the button. Then evaluate the button using the AI.
 
 
 \backmatter
