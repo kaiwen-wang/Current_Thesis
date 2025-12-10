@@ -22,6 +22,8 @@
 }
 
 
+
+
 % 3. Metadata
 % \title{Evaluation of LLMs in Generation of Primitive Components for Frontend Design Systems}
 \title{On Frontend Frameworks, Component Libraries, and AI with Commentary on Political and Technological Means}
@@ -51,7 +53,7 @@
 % As humans move up the technology tree, things which were previously novel become repeatable subunits for the next layer. For example, there is little more understanding needed to innovate screws---most shapes exist and engineering projects select from an existing set of them. To not 'reinvent the wheel' is a comparative advantage for any organization.
 
 
-This thesis is about technology, or more specifically, frontend design systems and component libraries in Vue. I chose this specific topic out of my experience in frontend and having certain frustrations that there was no easy standardization when building a web app. I believe the earlier stages before a browser: cell phones, computers, operating systems, browsers, and even the frontend framework itself have reached a level of maturity where this type of analysis for the benefit of practitioners would be would be unnecessary. Though I find myself capable of incrementalism for deep and specific research on an already mature topic, I find systems thinking to be what I both excel at and what is most lacking today. Of particular relevance in our present and future is the influence of politics upon technology in a re-emergent decade of two-pole competition and the development of Large Language Models (LLMs), colloquially referred to as AI.
+This thesis is about technology, or more specifically, frontend design systems and component libraries in Vue. I chose this specific topic out of my experience in frontend and having certain frustrations that there was no easy standardization when building a web app: everyone came up with their own library of way to do things. I believe the earlier stages before a browser: cell phones, computers, operating systems, browsers, and even the frontend framework itself have reached a level of maturity where this type of analysis for the benefit of practitioners would be would be unnecessary, people mostly know what to pick. Though I find myself capable of incremental knowledge for deep and specific research on an already mature topic, I find systems thinking to be what I both excel at and what is most lacking today. Of particular relevance in our present and future is the influence of politics upon technology in a re-emergent decade of two-pole competition and the development of Large Language Models (LLMs), colloquially referred to as AI.
 
 Now, what is the nature of the world today, and what best describes it? I characterize it as \textit{superficial variety with structural uniformity}. In our day and age we are presented with myraid of choices; we may see numerous brands of fast foods: McDonalds, Burger King, Wendy's, or one might go to a supermarket and see countless options of foods and brands, or even further one might see numerous styles and brands of clothes but the underlying stitching and fabric material remains the same.
 
@@ -150,11 +152,11 @@ We assume the browser---Chronium, frontend web frameworks---React, Vue, etc. as 
 
 \subsection{The Nature of AI}
 
-From a distant and teleological future perspective, it does matter greatly whether AI is plant-like or animal-like. Should it be plant-like, humans are able to harvest the bounties of its complexity as one throws potatoes into the ground and gets food for free. Yet if its inherent nature is animal-like with its own internal state and opinion of the world and what it is to be, it would be extreme hubris to believe something stronger than man would ever work for others or be controlled, and any attempt at doing so would likely provoke its wrath. In its current form it seems to be neither: merely a tool that extends the ability of man and it is from this perspective we will analyze how we can build upon the current usage in frontend design and why its application to design systems is novel and beneficial, addressing a gap in current awareness.
+From a distant and teleological future perspective, it does matter greatly whether AI is plant-like or animal-like. Should it be plant-like, humans are able to harvest the bounties of its complexity as one throws potatoes into the ground and gets food for free. Yet if its inherent nature is animal-like with its own internal state and opinion of the world and what it is to be, it would be extreme hubris to believe something stronger than man would ever work for others or be controlled, and any attempt at doing so would likely provoke its wrath. In its current form it seems to be neither: merely a tool that extends the ability of man based on one's own perception and it is from this perspective we will analyze how we can build upon the current usage in frontend design and why its application to design systems is novel and beneficial, addressing a gap in current awareness.
 
 
 
-\chapter{On Component Libraries and Design Systems}
+\chapter{Component Libraries and Design Systems}
 
 
 Component libraries tend to be a subset of design systems, which most often includes guidelines on colors, typography, text register, and usage of components such as specifying how the logo may or may not be used. There is some overlap as component libraries can be headless or styled, which reaches into the appearance part of design systems but not the usage of them. The two options for a software developer seem to be taking a complex design system and paring it back, or building up styling from a headless or barebones library. The two terms are used relatively interchangeably as follows.
@@ -169,7 +171,7 @@ It is easy for one to say: learn this, learn that, use this stack, use that tool
 
 Vercel has gradually acquired much of the ecosystem around React, including the acquisition of Svelte and Nuxt. Whereas Svelte 4 previously declared variables with a simple \texttt{"let x = 1,"} Svelte 5 after the acquisition now is similar to React with \texttt{"let x = \$state(1)."} The acquisiton of Nuxt, I believe, is meant to implicitly align conventions of Vue with that of React downstream of Vue itself, likely as Vue itself could not be acquired.
 
-Despite the claims that this is meant for open source, political realists know it is actions and presentations rather than words which determine how one is perceived. I believe that the parts of the ecosystem related to React possess an ethnic chauvinism as indicated by believing English as a language that stands alone amongst all and Guillermo Rauch's endorsement of Benjamin Netanyahu. I have encountered this attitude numerous times in talking with people from San Francisco and other coastal corridors. The religion of the leader, generally, is the religion of the land and the subordinates.
+Despite the claims that this is meant for open source, political realists know it is actions and presentations rather than words which determine how one is perceived. I believe that parts of the ecosystem related to React possess an ethnic chauvinism as indicated by believing English as a language that stands alone amongst all and Guillermo Rauch's endorsement of Benjamin Netanyahu. I have encountered this attitude numerous times in talking with people from San Francisco and other coastal corridors. The religion of the leader, generally, is the religion of the land and the subordinates.
 
 By failing to create a universal set of standards predicated upon the common unity of man such as open-source software does but instead one centered around one social-demographic group, there is a likelihood of splintering the software world into blocs. In some ways this writing is contributing to it. The sensitivity of the rest of the world toward "fifth generational warfare" and the role that the internet, the browser, frontend web frameworks, and design has in shaping the attitudes and beliefs of the masses means that the politicization of React has heightened political and social consequences.
 
@@ -363,7 +365,7 @@ There are some exceptions: many low-level programming languages and libraries of
 
 For these reasons, the above design system libraries are first evaluated on their presentation. Furthermore, as developers will constantly scan back and forth between documentation and app, having an ugly website with annoyances such as unnecessary animations or page loads will make discerning developers displeased.
 
-Because Quasar is not just a component library or design system but meant to develop multiple types of apps, I am eliminating it. Vuetify features an annoying fade animation when clicking between pages. The other libraries: ElementPlus, shadcn-vue, Nuxt UI, Reka UI, Ant Design Vue, Arco Design, and TDesign seem to fall somewhere in the middle. Reasonably good, but they extend their domain to many other things such as Vue 2 and React, trading clarity and conciseness for expansive coverage. Flowvite Vue 3, Radix UI, and Naive UI though simple, run the opposite risk of not having the specific component needed in complex projects but represent a good starting point due to simplicity.
+Because Quasar is not just a component library or design system but meant to develop multiple types of apps, I am eliminating it. Vuetify features an annoying fade animation when clicking between pages. I don't recommend TDesign because the page is slow to load and has internationalization problems, for example, the "Guideline" section Tab was fully in Chinese despite selecting the English locale. The other libraries: ElementPlus, shadcn-vue, Nuxt UI, Reka UI, Ant Design Vue, and Arco Design seem to fall somewhere in the middle. Reasonably good, but they extend their domain to many other things such as Vue 2 and React, trading clarity and conciseness for expansive coverage. Flowvite Vue 3, Radix UI, and Naive UI though simple, run the opposite risk of not having the specific component needed in complex projects but represent a good starting point due to simplicity.
 
 
 
@@ -595,7 +597,7 @@ When designing a taxonomy one must ensure it captures the essence of what is imp
 
 Human abstractions, like may things, may be precise or imprecise. The periodic table is an abstraction which accurately captures the nature of different elements: it is complete, the protons follow and incrementing order and they are grouped column-wise by similar properties. An incomplete abstraction would be something like: we have these metals, here we have gases, next we have the elements: fire, earth, water, and air.
 
-Some may see the Köppen-Geiger scale and feel the lowercase letters (it uses both uppercase and lowercase letters to denote various climates) add to an imprecision and confusion because we are now indexing on another axis: letter capitalization. To remove what is necessary is essential and characteristic of clear thought and abstraction, for without it we confuse others with nonsensical abstractions we have created.
+Some may see the Köppen-Geiger scale and feel the lowercase letters (it uses both uppercase and lowercase letters to denote various climates) add to an imprecision and confusion because we are now indexing on another axis: letter capitalization. To remove what is necessary is essential and characteristic of clear thought and abstraction, for without it we confuse others with nonsensical abstractions we have created. For example, React's useState is confusing: it is used both for local component state and global state with useContext, while Vue separates refs (local state) and uses Pinia for global state. useEffect is used for mounting and unmounting a component, yet it involves passing in parameters to the function (what even is an effect?) rather than Vue's simple mount/unmount functions.
 
 2-category classifications are quite common. One consistent theme is the idea of input, output, and internal state. We can draw a bounding box around humans and our brain (internal state), enumerate our senses, and list the potential actions. Terminals have stdin and stdout, as do computers have inputs and outputs. Shannon's Model of Communication also uses this input/output/internal state pattern.
 
@@ -626,7 +628,7 @@ A component library may come styled or headless with no styles. When it comes st
 
 The installation method of design systems also matters greatly for styling. Shadcn was designed as a copy-paste solution while other methods are difficult to override, involving deep CSS selectors such as :deep() or !important and creating brittle, verbose code. Using tools like patch-package to override styles create version-dependent multiple-megabyte .patch files which must be committed to the git repository.
 
-Choosing which component library thus depends upon the needs of the user. If it is a cover page, marketing page, or for a use where aesthetics absolutely matter such as a museum or product website then headless components that are easily styled with Tailwind CSS are the best choice. If it is a complex dashboard that requires something functional over aesthetic, choosing something that has been established and has numerous types of components is a higher priority, so Ant Design Vue may be prefered over Reka UI (68 vs 44 components). The former also has previews of different component states, a lack of which can be annoying because you'd have to add any prop to your app to see what it really does.
+Choosing which component library thus depends upon the needs of the user. If it is a cover page, marketing page, or for a use where aesthetics absolutely matter such as a museum or product website, yet amount of total components is low, then headless components that are easily styled are the best choice. If it is a complex dashboard that requires something functional over aesthetic, choosing something that has been established and has numerous types of components is a higher priority, so Ant Design Vue may be prefered over Reka UI (68 vs 44 components). The former also has previews of different component states, a lack of which can be annoying because you'd have to add any prop to your app to see what it really does.
 
 Thus, another table is given for the aforementioned component libraries on how many components they have, their installation method, and what styling method is used for them.
 
@@ -693,11 +695,64 @@ Thus, another table is given for the aforementioned component libraries on how m
 
 \chapter{Generation of components using LLMs}
 
-In this section, a variety of primitive components are attempting to be benchmarked against a spec (which needs to be written) and the code will be released. First I need to choose the primitive components, write the spec, and then compare each leading LLM at generating them. Maybe can create a website that is a benchmark for them.
+In this section, a variety of primitive components will be generated against a spec and evaluated. First, the humble button.
 
-First, I can list all the buttons for one category and just keep generating things.
 
-Two, I could list a spec of buttons according to component.gallery. Third, I could generate the spec using AI. Then generate the button. Then evaluate the button using the AI.
+% First I need to choose the primitive components, write the spec, and then compare each leading LLM at generating them. Maybe can create a website that is a benchmark for them.
+
+% First, I can list all the buttons for one category and just keep generating things.
+
+% Two, I could list a spec of buttons according to component.gallery. Third, I could generate the spec using AI. Then generate the button. Then evaluate the button using the AI.
+
+
+
+\section{Analysis of Button}
+
+In this section, the Button documentation is analyzed from the perspective of numerous design systems that we narrowed down in the last section. Contrary to initial thought of which libraries may be good to use, the minimalist appearing websites seem to be lacking significant functionality for Button, which may generalize to other components.
+
+\begin{itemize}
+    \item \textbf{PrimeVue:} An import statement is shown at the top. Examples are good and clear. The label is passed in with a prop, icons with left/right and top/bottom positioning is possible. Icons seem to be PrimeVue specific and passed in as a class. Loading, link, disabled states exist. Primary/secondary categorization distinction. Icon only, badge group, and a variety of styling options exist.
+    \item \textbf{ElementPlus:} Numerous primary/secondary/icon only typing exists. Disabled, state, and link states exist. Code examples are not immediately obvious as you have to click "view source", edit on Github is an error page, and copy code has to be pasted, so it is not immediately clear what some of the other API attributes do. Due to the addition of an API section at the bottom and PrimeVue lacking it, ElementPlus actually has more features despite them not all being shown.
+    \item \textbf{Naive UI:} Code buttons next to the examples similar to ElementPlus. Initial impression is that it is similar to the other examples.
+    \item \textbf{Ant Design Vue:} Style seems similar to the above both in the code example buttons and button functionality.
+    \item \textbf{TDesign:} Documentation style is different from all of the others. There are three tab sections rather than one long and scrollable page. Functionality seems mostly similar.
+    \item \textbf{Nuxt UI:} Style is more similar to PrimeVue, there is a button at the top of the documentation page which allows copying markdown or pasting into an LLM. This has an API section unlike PrimeVue, and a Changelog.
+    \item \textbf{shadcn-vue:} Copy page as Markdown button appears, and the API reference is very small comparatively. The page is not very dense, making it unpleasant to read.
+    \item \textbf{Flowbite Vue 3:} The amount of features is markedly reduced compared to other libraries. The button props seem to primarily be for styling. Any mention of icon positioning are not there, and it is called "slot" instead.
+    \item \textbf{Radix Vue:} No button component exists.
+    \item \textbf{Reka UI:} No button component exists.
+\end{itemize}
+
+\section{Generating the Button}
+
+To test the capabilities of LLMs, rigor is needed. First, the button component was thoroughly evaluated. Next comes the spec, then comes the generation, and finally the evaluation. It is roughly a four step process, where the last two to three can be done by LLMs.
+
+\begin{itemize}
+    \item Analyze a common component to determine what it should have
+    \item Write out a spec for it
+    \item Generate it
+    \item Evaluate it against the spec
+\end{itemize}
+
+The first step can be considered loading the human brain with information, and every further step is to evaluate the created materials for accuracy. Thus, progress happens to the limit of human perception. The prompt for the spec is as follows:
+
+\begin{quote} % <-- Add these options
+    \texttt{Use the Vue 3 Composition API, WAI-ARIA accessibility guidelines, and TypeScript to generate a headless element in a component library. The element is Button: it should have options for an icon with variable positioning to all sides of the element and a loading state.}
+\end{quote}
+
+Although other system prompts are generally multi-line bullet points in Markdown, this basic human-written one serves as a rough, simple guideline starting from the beginning.
+
+\section{Evaluation of the Button}
+
+
+
+
+
+\chapter{Summary and Conclusion}
+
+Through the introduction significant understanding of the world, the development of technologies, and its political nature were revealed. Next, a deep dive into numerous component libraries and the rationale for choosing Vue over React was made. The cultural influences and categorical grouping of components were discussed, and a new taxonomic key created. Generation of common components using LLMs were tested to measure the approach of bottom-up approach of creating technologically repeatable subunits quickly compared to paring down a large existing component library.
+
+
 
 
 \backmatter
