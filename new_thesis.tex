@@ -17,14 +17,15 @@
 \hypersetup{
     colorlinks=true,
     linkcolor=black,    % Color of internal links (sections, etc.)
-    filecolor=magenta,
-    urlcolor=blue       % Color of external web links
+    citecolor=black,    % Color of citations
+    filecolor=black,
+    urlcolor=black      % Color of external web links
 }
 
 
 
 % Bibliography setup with biblatex (modern approach)
-\usepackage[backend=biber, style=authoryear, citestyle=authoryear]{biblatex}
+\usepackage[backend=biber, style=numeric, citestyle=numeric]{biblatex}
 \addbibresource{references.bib}
 
 \usepackage{listings}
@@ -113,7 +114,6 @@ For today, a sort of piercing ability to get at the core and essence of reality 
 
 
 % A trusty tool to wield in this is writing a chronology of how things were, how they came to be, and the reasons and rationale for where it shall be going. By doing so, holes or gaps can be identified in the current paradigm, giving motive for action.
-test
 
 
 
@@ -130,9 +130,9 @@ test
 
 \section{The Development of Technologies}
 
-All technologies are implemented by humans, who together through shared mutual understanding, are then able to create themselves or have others implement these mental abstractions. What we see on a computer is no different: the specification bodies are the W3C for CSS and accessibility, WHATWG for HTML, and Ecma International for Javascript. Google, Apple, and Mozilla then respectively implement the Blink, WebKit, and Gecko rendering engine.
+All technologies are implemented by humans, who together through shared mutual understanding, are then able to create themselves or have others implement these mental abstractions. What we see on a computer is no different: the specification bodies are the W3C for CSS and accessibility~\cite{w3c}, WHATWG for HTML~\cite{whatwg}, and Ecma International for Javascript~\cite{ecma}. Google, Apple, and Mozilla then respectively implement the Blink, WebKit, and Gecko rendering engine.
 
-Nevertheless, these specifications are rarely enough to satisfy two significant demands of frontend: reactivity and composability. Reactivity is the automatic response in appearance to the change in a variable or internal state while composability means the ability to break a website down into pieces so as to develop parts of the website without interfering in other parts, in addition to reusing components across the app where functionality may be the same and changes in one place will need to be propagated to all instances.
+Nevertheless, these specifications are rarely enough to satisfy two significant demands of frontend: reactivity and composability~\cite{alan_building_2024}. Reactivity is the automatic response in appearance to the change in a variable or internal state while composability means the ability to break a website down into pieces so as to develop parts of the website without interfering in other parts, in addition to reusing components across the app where functionality may be the same and changes in one place will need to be propagated to all instances.
 
 % Add why this is relevant
 
@@ -209,7 +209,7 @@ Vercel has gradually acquired much of the ecosystem around React, including the 
 
 Despite the claims that this is meant for open source, political realists know it is actions and presentations rather than words which determine how one is perceived. I believe that parts of the ecosystem related to React possess an ethnic chauvinism as indicated by believing English as a language that stands alone amongst all and Guillermo Rauch's endorsement of Benjamin Netanyahu. I have encountered this attitude numerous times in talking with people from San Francisco and other coastal corridors. The religion of the leader, generally, is the religion of the land and the subordinates.
 
-By failing to create a universal set of standards predicated upon the common unity of man such as open-source software does but instead one centered around one social-demographic group, there is a likelihood of splintering the software world into blocs. In some ways this writing is contributing to it. The sensitivity of the rest of the world toward "fifth generational warfare" and the role that the internet, the browser, frontend web frameworks, and design has in shaping the attitudes and beliefs of the masses means that the politicization of React has heightened political and social consequences.
+By failing to create a universal set of standards predicated upon the common unity of man such as open-source software does but instead one centered around one social-demographic group, there is a likelihood of splintering the software world into blocs. In some ways this writing is contributing to it. The sensitivity of the rest of the world toward "fourth generational warfare"\cite{cirno_russia_nuclear} and the role that the internet, the browser, frontend web frameworks, and design has in shaping the attitudes and beliefs of the masses means that the politicization of React has heightened political and social consequences.
 
 Because of the acquisition of Svelte and the similarities of Solid to React, I believe the only remaining alternative lies in Vue, founded by Evan You based in Singapore. This two-pole configuration in the frontend framework world in some way mirrors the ongoing overall battle between East and West. Though Evan speaks Chinese and is in some nominal ways Eastern, it should be said the principles and future governance of the Vue and Vite world have been mentioned as predicated upon the free and open web.
 
