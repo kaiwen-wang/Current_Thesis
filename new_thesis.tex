@@ -21,6 +21,12 @@
     urlcolor=blue       % Color of external web links
 }
 
+
+
+% Bibliography setup with biblatex (modern approach)
+\usepackage[backend=biber, style=authoryear, citestyle=authoryear]{biblatex}
+\addbibresource{references.bib}
+
 \usepackage{listings}
 \usepackage{xcolor} % Required for background color
 
@@ -107,7 +113,7 @@ For today, a sort of piercing ability to get at the core and essence of reality 
 
 
 % A trusty tool to wield in this is writing a chronology of how things were, how they came to be, and the reasons and rationale for where it shall be going. By doing so, holes or gaps can be identified in the current paradigm, giving motive for action.
-
+test
 
 
 
@@ -858,7 +864,11 @@ Through the introduction significant understanding of the world, the development
 
 
 
+\nocite{*}
+
+
 \backmatter
-% \bibliography{references}
+
+\printbibliography
 
 \end{document}
