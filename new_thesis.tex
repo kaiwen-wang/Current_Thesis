@@ -21,6 +21,36 @@
     urlcolor=blue       % Color of external web links
 }
 
+\usepackage{listings}
+\usepackage{xcolor} % Required for background color
+
+
+\definecolor{codegray}{gray}{0.95}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{codegray},
+    commentstyle=\color{green},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{gray},
+    stringstyle=\color{purple},
+    basicstyle=\footnotesize\ttfamily,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=single, % Adds a frame around the code
+    rulecolor=\color{black},
+    title=\lstname
+}
+
+\lstset{style=mystyle}
+
 
 
 
@@ -745,6 +775,79 @@ Although other system prompts are generally multi-line bullet points in Markdown
 \section{Evaluation of the Button}
 
 
+After generation of the button, two different methods of displaying it were displayed. First, in Storybook and the second just in Vue directly.
+
+
+What separates high quality human abstractions from machine-generated sloppiness is the degree of "sharpness" and precision inherent in high quality human work.
+
+I then fed this thesis and component.library's website into the button to tell it to generate a new spec for the thesis.
+
+
+\section{AI-generated Spec}
+
+
+
+\begin{lstlisting}[caption={LLM Prompt for Generating a Button Component}, label={lst:prompt}]
+### LLM Instructions to Generate a Button Component
+
+**Role:** You are an expert frontend developer specializing in creating accessible, reusable, and robust UI components. Your work prioritizes semantic markup, WAI-ARIA compliance, and a clean, developer-friendly API.
+
+**Task:** Generate a headless **Button** component for a Vue 3 application. The component should be a single `.vue` file using the Composition API (`<script setup>`) and TypeScript. It must be unstyled by default but architected for easy customization via props and slots, intended to be styled by a utility-first CSS framework like Tailwind CSS or with scoped CSS.
+
+Adhere strictly to the following requirements, which are based on best practices for modern web components.
+
+---
+
+### **Component Specification: `Button.vue`**
+
+#### **1. Core Markup & Semantics**
+- The root element **must** be a native `<button>` element. Do not use `<a>`, `<div>`, or `<span>`.
+- It must accept a `type` attribute with possible values `'button'`, `'submit'`, or `'reset'`. The default `type` should be `'button'` to prevent accidental form submissions, which is a safer default than the browser's native `'submit'`.
+
+#### **2. Props API (Define with `defineProps`)**
+The component's interface should be strongly typed with TypeScript.
+
+- `type`: `(type: 'button' | 'submit' | 'reset') => { default: 'button' }`
+- Defines the button's behavior.
+- `disabled`: `(type: Boolean) => { default: false }`
+- Disables the button from being interactive. Should apply the `disabled` attribute to the underlying `<button>`.
+- `loading`: `(type: Boolean) => { default: false }`
+- Puts the button in a loading state. When `true`, the button must also be disabled to prevent further clicks.
+- `iconPosition`: `(type: 'left' | 'right') => { default: 'left' }`
+- Determines where the icon is rendered relative to the button's text label.
+
+#### **3. Slots (Define with `<slot>`)**
+Use slots to make the component's content flexible and composable.
+
+- **`default` slot:** For the primary text content of the button (e.g., "Submit", "Delete").
+- **`icon` slot:** A named slot for passing an SVG or an icon component. This slot should only be rendered if content is provided for it.
+- **`loader` slot:** A named slot for a loading indicator (e.g., a spinner). This slot should only be rendered when the `loading` prop is `true`, and it should replace both the `icon` and `default` slots.
+
+#### **4. Behavior and Accessibility (WAI-ARIA)**
+- When `loading` is `true`:
+- The button must have the `aria-busy="true"` attribute.
+- The button must have the `disabled` attribute.
+- The `loader` slot content should be displayed, and all other content (text, icon) should be hidden.
+- When `disabled` is `true`:
+- The button must have the `aria-disabled="true"` attribute in addition to the native `disabled` attribute.
+- The component must be fully keyboard-accessible by default, leveraging the native `<button>` element's focusability and activation (via `Space` and `Enter` keys).
+- **Note for consumer:** While not implemented in the component itself, remind the user that if the button contains *only an icon* and no visible text, they are responsible for providing an `aria-label` for screen reader users.
+
+#### **5. Styling Philosophy**
+- The component should be **headless**. Do not include any CSS in the `<style>` block except for what is absolutely necessary for functionality (e.g., a class to visually hide text for screen readers if needed).
+- The template should use a logical structure that allows for easy styling with utility classes passed via the `class` attribute from the parent. For example, use `<span>` wrappers for the icon and text to allow individual styling.
+
+#### **6. Final Output**
+- Generate the complete code for the `Button.vue` Single File Component.
+- Include the `<template>`, `<script setup lang="ts">`, and an empty `<style scoped>` block.
+- Provide a brief example of how to use the component in a parent, showing a standard button, a button with an icon, and a button in its loading state.
+\end{lstlisting}
+
+
+
+\section{Test}
+
+Despite generating a much longer spec, it seems the AI was not able to
 
 
 
