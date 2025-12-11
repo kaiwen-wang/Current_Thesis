@@ -1,71 +1,6 @@
 \documentclass[12pt, letterpaper, oneside]{book}
 
-% 1. Page Layout
-\usepackage[margin=1.5in]{geometry} % Standard 1-inch margins
-\usepackage[utf8]{inputenc}
-
-% 2. Packages for your Graphs & Images
-\usepackage{graphicx}
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.18}
-\usepackage{tikz}
-\usepackage{booktabs} % <-- ADD THIS LINE
-\usepackage{graphicx} % Required for \rotatebox
-\usepackage{float} % <--- ADD THIS PACKAGE
-
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=black,    % Color of internal links (sections, etc.)
-    citecolor=black,    % Color of citations
-    filecolor=black,
-    urlcolor=black      % Color of external web links
-}
-
-
-
-% Bibliography setup with biblatex (modern approach)
-\usepackage[backend=biber, style=numeric, citestyle=numeric]{biblatex}
-\addbibresource{references.bib}
-
-\usepackage{listings}
-\usepackage{xcolor} % Required for background color
-
-
-\definecolor{codegray}{gray}{0.95}
-
-\lstdefinestyle{mystyle}{
-    backgroundcolor=\color{codegray},
-    commentstyle=\color{green},
-    keywordstyle=\color{magenta},
-    numberstyle=\tiny\color{gray},
-    stringstyle=\color{purple},
-    basicstyle=\footnotesize\ttfamily,
-    breakatwhitespace=false,
-    breaklines=true,
-    captionpos=b,
-    keepspaces=true,
-    numbers=left,
-    numbersep=5pt,
-    showspaces=false,
-    showstringspaces=false,
-    showtabs=false,
-    tabsize=2,
-    frame=single, % Adds a frame around the code
-    rulecolor=\color{black},
-    title=\lstname
-}
-
-\lstset{style=mystyle}
-
-
-
-
-% 3. Metadata
-% \title{Evaluation of LLMs in Generation of Primitive Components for Frontend Design Systems}
-\title{On Frontend Frameworks, Component Libraries, and AI with Commentary on Political and Technological Means}
-\author{Kaiwen Wang}
-\date{December 12, 2025}
+\input{style.tex}
 
 \begin{document}
 
@@ -731,7 +666,7 @@ Thus, another table is given for the aforementioned component libraries on how m
 
 \chapter{Generation of components using LLMs}
 
-In this section, a variety of primitive components will be generated against a spec and evaluated. First, the humble button.
+In this section, the idea of generating a "repeatable subunit" using AI is tested. First, the humble button.
 
 
 % First I need to choose the primitive components, write the spec, and then compare each leading LLM at generating them. Maybe can create a website that is a benchmark for them.
@@ -761,16 +696,16 @@ In this section, the Button documentation is analyzed from the perspective of nu
 
 \section{Generating the Button}
 
-To test the capabilities of LLMs, rigor is needed. First, the button component was thoroughly evaluated. Next comes the spec, then comes the generation, and finally the evaluation. It is roughly a four step process, where the last two to three can be done by LLMs.
+To test the capabilities of LLMs, rigor is needed. First, the button component was thoroughly evaluated. Next comes the spec, then comes the generation, and finally the evaluation. It is roughly a four step process, where the last two to three can be done by LLMs to some degree.
 
 \begin{itemize}
-    \item Analyze a common component to determine what it should have
-    \item Write out a spec for it
-    \item Generate it
-    \item Evaluate it against the spec
+    \item Analyze a common component across multiple sources to determine what it should have
+    \item Write out a spec for it (this can be detailed or simple)
+    \item Generate it (different LLMs can be used)
+    \item Evaluate it against the spec (easy to do as a list of words, hard to do live)
 \end{itemize}
 
-The first step can be considered loading the human brain with information, and every further step is to evaluate the created materials for accuracy. Thus, progress happens to the limit of human perception. The prompt for the spec is as follows:
+The first step can be considered loading the human brain with information, and every further step is a sort of evaluation-creation that always references the first step to see whether the created thing matches perception. It is never exactly a four step process because evaluation happens during the writing of the spec and the generation and construction while construction and changes also happen during validation. Thus, progress happens to the limit of human perception. The basic prompt for the spec I wrote is as follows:
 
 \begin{quote} % <-- Add these options
     \texttt{Use the Vue 3 Composition API, WAI-ARIA accessibility guidelines, and TypeScript to generate a headless element in a component library. The element is Button: it should have options for an icon with variable positioning to all sides of the element and a loading state.}
@@ -781,12 +716,13 @@ Although other system prompts are generally multi-line bullet points in Markdown
 \section{Evaluation of the Button}
 
 
-After generation of the button, two different methods of displaying it were displayed. First, in Storybook and the second just in Vue directly.
+After generation of the button, I had the AI assistant "Cline" using grok-code-fast-1 create a page in Vue so that the button could be displayed. Though the button has an icon state, LLMs cannot automatically set up the proper context to display the button with the icon.
+
+\begin{center}
+    \includegraphics[width=\linewidth]{SCR-20251210-rjwm.png}
+\end{center}
 
 
-What separates high quality human abstractions from machine-generated sloppiness is the degree of "sharpness" and precision inherent in high quality human work.
-
-I then fed this thesis and component.library's website into the button to tell it to generate a new spec for the thesis.
 
 
 \section{AI-generated Spec}
@@ -849,17 +785,34 @@ Use slots to make the component's content flexible and composable.
 - Provide a brief example of how to use the component in a parent, showing a standard button, a button with an icon, and a button in its loading state.
 \end{lstlisting}
 
+\section{Evaluation of the Longer Spec Button}
 
 
-\section{Test}
+\begin{center}
+    \includegraphics[width=\linewidth]{SCR-20251210-rmhl.png}
+\end{center}
 
-Despite generating a much longer spec, it seems the AI was not able to
 
+
+
+\section{Regarding the generated results}
+
+Despite the generation of a longer specification from components.gallery, it was not able to create a display of components necessarily more detailed than the simple few lined prompt. Moreover, the display and the usage of the component is much reduced: Storybook requires significant setup and displaying the component in Vue limits how well it can be displayed.
+
+We thus suffer a contradiction in the generation of the results and the validation of the results. Frontend components are inherently visual; they are tied in their validation not to the passing of unit tests, judged on the quality of writing, but the user's judgment of multiple states and interactive usage.
+
+Like how it is difficult to map a user's usage of software (called end to end testing), which requires using tools such as Cypress to simulate how a user would click around the software, it is likewise difficult to test the veracity of frontend components.
+
+Though headless components are called components without style, Headless UI has added styling on their documentation page so people can visualize it. Components without any styling would be essentially invisible, thus, even if they are meant to have their styles later overriden it would still require simple styles so that it is first perceivable by the user so that they may later style it. Of what exact style: I think a simple high contrast or grayscale with occasional colors would present a neutral unadorned look suitable for building interfaces which can later if overriden if styling is needed.
 
 
 \chapter{Summary and Conclusion}
 
 Through the introduction significant understanding of the world, the development of technologies, and its political nature were revealed. Next, a deep dive into numerous component libraries and the rationale for choosing Vue over React was made. The cultural influences and categorical grouping of components were discussed, and a new taxonomic key created. Generation of common components using LLMs were tested to measure the approach of bottom-up approach of creating technologically repeatable subunits quickly compared to paring down a large existing component library.
+
+What separates high quality human abstractions from machine-generated sloppiness is the degree of "sharpness" and precision inherent in high quality human work.
+
+I then fed this thesis and component.library's website into the button to tell it to generate a new spec for the thesis.
 
 
 

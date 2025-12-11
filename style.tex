@@ -1,0 +1,66 @@
+% 1. Page Layout
+\usepackage[margin=1.5in]{geometry} % Standard 1-inch margins
+\usepackage[utf8]{inputenc}
+
+% 2. Packages for your Graphs & Images
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{tikz}
+\usepackage{booktabs} % <-- ADD THIS LINE
+\usepackage{graphicx} % Required for \rotatebox
+\usepackage{float} % <--- ADD THIS PACKAGE
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,    % Color of internal links (sections, etc.)
+    citecolor=blue,    % Color of citations
+    filecolor=blue,
+    urlcolor=blue      % Color of external web links
+}
+
+
+
+% Bibliography setup with biblatex (modern approach)
+\usepackage[backend=biber, style=numeric, citestyle=numeric]{biblatex}
+\addbibresource{references.bib}
+
+\usepackage{listings}
+\usepackage{xcolor} % Required for background color
+
+
+\definecolor{codegray}{gray}{0.95}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{codegray},
+    commentstyle=\color{green},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{gray},
+    stringstyle=\color{purple},
+    basicstyle=\footnotesize\ttfamily,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=single, % Adds a frame around the code
+    rulecolor=\color{black},
+    title=\lstname
+}
+
+\lstset{style=mystyle}
+
+
+
+
+% 3. Metadata
+% \title{Evaluation of LLMs in Generation of Primitive Components for Frontend Design Systems}
+\title{On Frontend Frameworks, Component Libraries, and AI with Commentary on Political and Technological Means}
+\author{Kaiwen Wang}
+\date{December 12, 2025}
