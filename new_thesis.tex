@@ -53,9 +53,18 @@ The development of technologies through shared mutual understanding is explained
 
 
 
+Events such as the Arab Spring, Maidan Uprising in Ukraine, or most recently the 2025 September protests in Nepal are examples of social-media mediated revolutions, in which the boundaries between military and propaganda efforts blur. These increasing gray-line operations are encompassed to some degree by terms such as "fourth-generational warfare," "hybrid warfare," or "fifth columns." Since such operations are contingent upon the persuasive and aesthetic appeal of the message, it can only be said that web design, videography, and copywriting play an oversized role in battles between and among both state and non-state actors such as in the United States between Republican-affiliated Elon Musk's X.com and Donald Trump's Truth Social to the Democratic media outlets such as the New York Times, the Wall Street Journal, and the Atlantic.
+
+Given that technology has been politicized such as in the field of semiconductors, this paper analyzes a related field that perhaps has momentarily escaped attention: frontend frameworks such as React, Vue, Solid, Svelte, and their surrounding ecosystems and component libraries. The pace of development reminds one of the early 2000s "browser wars," when different inoperable systems vied for market supremacy.
 
 
-This thesis is about technology, or more specifically, frontend design systems and component libraries in Vue. I chose this specific topic out of my experience in frontend and having certain frustrations that there was no easy standardization when building a web app: everyone came up with their own library of way to do things. I believe the earlier stages before a browser: cell phones, computers, operating systems, browsers, and even the frontend framework itself have reached a level of maturity where this type of analysis for the benefit of practitioners would be would be unnecessary, people mostly know what to pick. Though I find myself capable of incremental knowledge for deep and specific research on an already mature topic, I find systems thinking to be what I both excel at and what is most lacking today. Of particular relevance in our present and future is the influence of politics upon technology in a re-emergent decade of two-pole competition and the development of Large Language Models (LLMs), colloquially referred to as AI.
+% This thesis is about technology, or more specifically, frontend design systems and component libraries in Vue. I chose this specific topic out of my experience in frontend and having certain frustrations that there was no easy standardization when building a web app: everyone came up with their own library of way to do things.
+
+% I believe the earlier stages before a browser: cell phones, computers, operating systems, browsers, and even the frontend framework itself have reached a level of maturity where this type of analysis for the benefit of practitioners would be would be unnecessary, people mostly know what to pick. 
+
+I debated whether this paper should be extremely specific in the way that deep-sea oil rigs may pierce the crust, going to the forefront of technical knowledge. Despite the aforementioned thought and perhaps as may be more suited for a technical institution, I nevertheless found myself and my personal experiences and tendencies to be more favorable for a bird's eye view. Hence, a more systematic approach is to be taken which in some ways is much needed considering the specialization, or perhaps overspecialization of fields today. Of particular relevance in our present and future is the influence of politics upon technology in a re-emergent decade of two-pole competition and the development of Large Language Models (LLMs), colloquially referred to as AI. To understand the landscape of frontend frameworks, component libraries, and AI models which may be paradoxically similar yet distinct in their own ways, a necessary analogy to set the stage is first needed.
+
+\section{The World in our Present Time}
 
 Now, what is the nature of the world today, and what best describes it? I characterize it as \textit{superficial variety with structural uniformity}. In our day and age we are presented with myraid of choices; we may see numerous brands of fast foods: McDonalds, Burger King, Wendy's, or one might go to a supermarket and see countless options of foods and brands, or even further one might see numerous styles and brands of clothes but the underlying stitching and fabric material remains the same.
 
@@ -142,21 +151,68 @@ My purpose in explaining these levels is to show the iterative and accumulative 
 Many AI website builders such as Lovable, v0, or Bolt are often used to create entire websites from a prompt, where further changes are made by inspecting the app visually and requesting further changes through text. These in my experience create unmaintainable websites despite initially satisfactory appearing interfaces for a few reasons: (1) appearing overly generic, (2) the amount of code generated exceeds the cognitive ability of the person who generated it to understand it, maintain it, and extend it (a) in both its usage and (b) the origin and nature of the dependencies used.
 
 
-The reason that appearing overly generic is a problem is because dimensionality reduction destroys important yet pertinent information. It is easier to distinguish quality between three different software products on their website than three different Github READMEs, just as it is easier to distinguish people based on their overall mannerisms and tendencies than a text biography. Therefore, generating websites which are not distinguished qualitatively presents a negative signaling indicator to users of that product, where the benefit of the trend inversely scales with the amount of people who are able to do it. However, many present web apps are of suboptimal quality: even if one were to use a design system which appears generic, the performance increases would distinguish it apart from other apps.
+The reason that appearing overly generic is a problem is because dimensionality reduction destroys important yet pertinent information. It is easier to distinguish quality between three different software products on their website than three different Github READMEs, just as it is easier to distinguish people based on their overall mannerisms and tendencies than a text biography. Therefore, generating websites which are not distinguished qualitatively presents a negative signaling indicator to users of that product, where the benefit of the trend inversely scales with the amount of people who are able to do it. This was noted in the article, "DALL-E and the Origin of Vibe Shifts." However, genericness shouldn't dissuade the software developer: many present web apps are of suboptimal quality---even if one were to use a design system which appears generic, the performance increases would distinguish it apart from other apps.
 
 The cognitive downside of AI website builders mainly presents itself in structure and components.
-Here is a colloquial dialogue of why AI in its current usage fails to meet quality frontend needs: "ok, you try to build something with AI, but it's crappy. So then you try to use a design library you don't really understand but hope to understand. That's still not much better, and you're lost in the components. You then try to one-shot all your own components for a design system, but that's inconsistent. So this thesis standardizes the different components, they are written out, tell people what is necessary for each of them, and see how good LLMs are at making them."
+Here is a colloquial dialogue of why AI in its current usage fails to meet quality frontend needs: "ok, you try to build something with AI, but it's crappy. So then you try to use a design library you don't really understand but hope to understand. That's still not much better, and you're lost in the components. You then try to one-shot all your own components for a design system, but that's inconsistent. So this thesis standardizes the different component categories, they are written out, tell people what might be necessary, and see how good LLMs are at making them."
 
 We assume the browser---Chronium, frontend web frameworks---React, Vue, etc. as given, and focus on understanding and solidfying the next level up (design systems/components) rather than immediately focusing on the website/end-product/user layer that lies above that.
 
 
 
+
 \subsection{The Nature of AI}
 
-From a distant and teleological future perspective, it does matter greatly whether AI is plant-like or animal-like. Should it be plant-like, humans are able to harvest the bounties of its complexity as one throws potatoes into the ground and gets food for free. Yet if its inherent nature is animal-like with its own internal state and opinion of the world and what it is to be, it would be extreme hubris to believe something stronger than man would ever work for others or be controlled, and any attempt at doing so would likely provoke its wrath. In its current form it seems to be neither: merely a tool that extends the ability of man based on one's own perception and it is from this perspective we will analyze how we can build upon the current usage in frontend design and why its application to design systems is novel and beneficial, addressing a gap in current awareness.
+From a distant and teleological future perspective, it does matter greatly whether AI is plant-like or animal-like. Should it be plant-like, humans are able to harvest the bounties of its complexity as one throws potatoes into the ground and gets food for free. Yet if its inherent nature is animal-like with its own internal state and opinion of the world and what it is to be, it would be extreme hubris to believe something stronger than man would ever work for others or be controlled, and any attempt at doing so would likely provoke its wrath. In its current form it seems to be neither: merely a tool that extends the ability of man based on one's own perception and it is from this perspective we will analyze how we can build upon the current usage in frontend design and why its application to design systems is novel and beneficial, addressing a gap in current awareness where AI mainly seems to be used to generate or modify large-scale website projects instead of small components.
+
+\section{Research Questions}
+
+To summarize all of the above so that explicit research questions are stated without the need to infer, this paper mainly addresses the following:
+\begin{itemize}
+    \item What are the political risks related to frontend web frameworks? What are the respective attitudes of the different camps?
+    \item How do "repeatable subunits" in the form of component libraries help people build software and technology faster? What characterizes component libraries? Can AI help in this case?
+    \item What is the nature of LLMs in generating component library parts? How are they evaluated and what are the solutions and problems revealed?
+\end{itemize}
+
+Some other questions that are also tangentially related but perhaps not as explored in depth in this thesis include:
+
+\begin{itemize}
+    \item What are the risks of other stages from the technology-information stack (device, operating system, browser, website infrastructure, frontend framework, component library, etc.) in geopolitical situations?
+    \item Do different LLMs generate different quality components? (After attempting to generate a simple component with a high grade LLM, it was realized that proceding down this path would be fruitless without better frameworks for evaluating the quality of generated components.)
+\end{itemize}
+
+Questions that do seem to be answered by this research, though not originally intended, include:
+
+\begin{itemize}
+    \item To what extent do the national and corporate origins of major Vue component libraries influence their component taxonomy and nomenclature?
+    \item What is a functional and logical taxonomy for categorizing UI components that synthesizes conventions from existing libraries?
+
+\end{itemize}
+
 
 
 \chapter{Related Work and Methodology}
+
+
+
+\section{On Political Presentation}
+
+For the social-political analysis in this thesis, Erving Goffman's \textit{Self as Presentation} framework is used. In it, he proposes that as a cuticle exposed to air develops a patina, so do people develop masks in relation to society. His dramaturgical analysis then classifies presentations as \textit{genuine} or \textit{false}, from which one can deduce the true opinions and feelings of people based upon their actions.
+
+A realist analysis as per Hans Morgenthau is taken to analyze the intentions around the presentations of those in the React world. This realist
+
+
+
+\section{Related Work from Technical Papers}
+
+Some
+
+
+\section{Methodology}
+
+The method of selecting component libraries in the following chapter derives from the following search methods: first, a cursory Google search. Second, prompting high-calibre LLMs such as Google Gemini 2.5 Pro for well-known Vue component libraries both with and without prior examples. For example, we may feed the current list of libraries in to explicitly ask for ones that are not in the existing list to discover previously unknown libraries. Third, using AI search tools such as Exa or Paradigm offer an alternative to Google searches, which may not find the direct result or source but instead marketing pages.
+
+Categorization and component counting comes from visual inspection of the documentation's site and Github source. Information about its origins are gleaned from Gemini 2.5 Pro with grounding in Google Search. Analysis of categories was emergent; it only came to an understanding after the initial research was made.
 
 
 
@@ -176,11 +232,13 @@ It is easy for one to say: learn this, learn that, use this stack, use that tool
 
 Vercel has gradually acquired much of the ecosystem around React, including the acquisition of Svelte and Nuxt. Whereas Svelte 4 previously declared variables with a simple \texttt{"let x = 1,"} Svelte 5 after the acquisition now is similar to React with \texttt{"let x = \$state(1)."} The acquisiton of Nuxt, I believe, is meant to implicitly align conventions of Vue with that of React downstream of Vue itself, likely as Vue itself could not be acquired.
 
-Despite the claims that this is meant for open source, political realists know it is actions and presentations rather than words which determine how one is perceived. I believe that parts of the ecosystem related to React possess an ethnic chauvinism as indicated by believing English as a language that stands alone amongst all and Guillermo Rauch's endorsement of Benjamin Netanyahu. I have encountered this attitude numerous times in talking with people from San Francisco and other coastal corridors. The religion of the leader, generally, is the religion of the land and the subordinates.
+Despite the claims that this is meant for open source, political realists (Hans Morgenthau?) know it is actions and presentations (Erving Goffman) rather than words which determine how one is perceived. I believe that parts of the ecosystem related to React possess an ethnic chauvinism as indicated by believing English as a language that stands alone amongst all and Guillermo Rauch's endorsement of Benjamin Netanyahu. I have encountered this attitude numerous times in talking with people from San Francisco and other coastal corridors. The religion of the leader, generally, is the religion of the land and the subordinates.
 
 By failing to create a universal set of standards predicated upon the common unity of man such as open-source software does but instead one centered around one social-demographic group, there is a likelihood of splintering the software world into blocs. In some ways this writing is contributing to it. The sensitivity of the rest of the world toward "fourth generational warfare"\cite{cirno_russia_nuclear} and the role that the internet, the browser, frontend web frameworks, and design has in shaping the attitudes and beliefs of the masses means that the politicization of React has heightened political and social consequences.
 
 Because of the acquisition of Svelte and the similarities of Solid to React, I believe the only remaining alternative lies in Vue, founded by Evan You based in Singapore. This two-pole configuration in the frontend framework world in some way mirrors the ongoing overall battle between East and West. Though Evan speaks Chinese and is in some nominal ways Eastern, it should be said the principles and future governance of the Vue and Vite world have been mentioned as predicated upon the free and open web.
+
+There is both a naive view and a principled view with regards to the above. Many open source softwares will present a Ukrainian banner on their website in the name of being against war; yet despite the protestations of words the usage of force is always a looming concern. The naive view believes these hunger strikes and highway climate protests are effective; the realist view sees them as mildly annoying and can be disposed with---it is only if words are backed by force, peace from the barrel of a gun, that such principles of liberty, peace, and justice for all might be upheld. I have not met Evan and though through the lack of forcefulness in his speech one may assume it lends toward the naive view, at the same time one usually does not rise to a major position without some principles regardless of their presentation and outward appearance. I have met Guillermo once, of which he was careful to pick his words as fit for the audience. He struck me as a skilled political operator.
 
 \subsection{On geopolitical risk}
 
@@ -821,6 +879,7 @@ Use slots to make the component's content flexible and composable.
 
 \section{Evaluation of the Longer Spec Button}
 
+Though the spec was longer, the presentation and lines of code of it seemed noticeably reduced. Perhaps feeding it more information created a spec which was overconstrained, while the short prompt in the first example allowed more parts of the button spec to be created. It was barely possible to test whether it functioned or not without setting up the infrastructure around it.
 
 \begin{center}
     \includegraphics[width=\linewidth]{SCR-20251210-rmhl.png}
@@ -838,6 +897,8 @@ We thus suffer a contradiction in the generation of the results and the validati
 Like how it is difficult to map a user's usage of software (called end to end testing), which requires using tools such as Cypress to simulate how a user would click around the software, it is likewise difficult to test the veracity of frontend components.
 
 Though headless components are called components without style, Headless UI has added styling on their documentation page so people can visualize it. Components without any styling would be essentially invisible, thus, even if they are meant to have their styles later overriden it would still require simple styles so that it is first perceivable by the user so that they may later style it. Of what exact style: I think a simple high contrast or grayscale with occasional colors would present a neutral unadorned look suitable for building interfaces which can later if overriden if styling is needed.
+
+This suggests two things regarding the usage of Large Language Models: the incremental practicticioner's approach is more significant for creating results than the "Wunderwaffe" approach. By attempting to develop a component, one realizes it can be broken down into even smaller steps such as first developing a testing rig, without which one-shotting the component, even with a well-written spec, is not possible. Second, because a high-powered LLM (Gemini 2.5 Pro) was already used to attempt this button, further testing using weaker powered LLMs, regardless of open or closed source, would be of little resultant analysis because all generations would be a subset of what is currently capable, and we are not evaluating such results upon a bar to which the bare minimum has yet to be reached.
 
 
 \chapter{Summary and Conclusion}
