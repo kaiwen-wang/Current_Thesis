@@ -9,6 +9,10 @@
 
 \maketitle
 
+% \chapter*{Acknowledgements}
+
+% I dedicate this writing to the Old American Society, the values and systems
+
 
 % \chapter{Foreword}
 
@@ -17,12 +21,38 @@
 
 \tableofcontents
 
+
+
+\chapter*{Acknowledgments}
+
+I am thankful in innumerous ways to Dr. Rodrigo Borela for his time and energy meeting with me during the last semester in which I was writing this thesis, from which we explored numerous directions this paper could go: from Human-Computing Interaction to comparisons between open- and closed- source AI, or talking of the proper format for journal submissions. I appreciate his diligence and feedback, without which this project would have been much delayed or perhaps not even shaped in its present form.
+
+This section is of course incomplete without acknowledging the broader Georgia Tech community and its formative influences on my perspectives on life, in addition to the old American culture that in some ways raised me, which sought the ends not in immediate needs but in the sense of responsibility to the general public and truth at large. Particular courses which I felt called back to this age included Grand Strategy with Dennis Lockhart, Automata with Zvi Galil, Privacy Policy and Law with Peter Swire, and Cognitive Science with Shashank Varma. It hearkens back a time when one nation animated by faith might seek the greater goods in the world for no other reason than man's insatiable desire to liberty, order, truth, and justice.
+
+Finally, my last dedication goes to my family, without which I would be but a leaf fluttering in the wind, for without present foundations we can build nothing of the future.
+% I am glad to have received an education in the last decades of the American Century, a time when one nation animated by faith might seek the greater goods in the world for no other reason than man's insatiable desire to liberty, order, truth, and justice. 
+
+
+
+
+
+\chapter*{Summary}
+
+We begin with a broad and general overview of many fields today, termed \textit{superficial variety with structural uniformity}. The underlying limitations causing such convergent evolution is discussed, and the need to understand a field clearly to make distinct as opposed to incremental approaches is explained. The current stage of component libraries for the web is discussed: a mostly mature field needing clarification with social and political relevance.
+
+The development of technologies through shared mutual understanding is explained, and though the browser is feature-filled frontend components are needed to satisfy \textit{reactivity} and \textit{composability}. A rough overview of component libraries, styling, and full-stack frameworks are discussed. Technology as a progression of "repeatable subunits" is described, and a digression onto the nature of AI and its ability to create these subunits is discussed.
+
+
 % --- MAIN MATTER (Pages restart at 1, 2, 3) ---
 \mainmatter
 
 \chapter{Introduction}
 
 % As humans move up the technology tree, things which were previously novel become repeatable subunits for the next layer. For example, there is little more understanding needed to innovate screws---most shapes exist and engineering projects select from an existing set of them. To not 'reinvent the wheel' is a comparative advantage for any organization.
+
+
+
+
 
 
 This thesis is about technology, or more specifically, frontend design systems and component libraries in Vue. I chose this specific topic out of my experience in frontend and having certain frustrations that there was no easy standardization when building a web app: everyone came up with their own library of way to do things. I believe the earlier stages before a browser: cell phones, computers, operating systems, browsers, and even the frontend framework itself have reached a level of maturity where this type of analysis for the benefit of practitioners would be would be unnecessary, people mostly know what to pick. Though I find myself capable of incremental knowledge for deep and specific research on an already mature topic, I find systems thinking to be what I both excel at and what is most lacking today. Of particular relevance in our present and future is the influence of politics upon technology in a re-emergent decade of two-pole competition and the development of Large Language Models (LLMs), colloquially referred to as AI.
@@ -126,8 +156,12 @@ We assume the browser---Chronium, frontend web frameworks---React, Vue, etc. as 
 From a distant and teleological future perspective, it does matter greatly whether AI is plant-like or animal-like. Should it be plant-like, humans are able to harvest the bounties of its complexity as one throws potatoes into the ground and gets food for free. Yet if its inherent nature is animal-like with its own internal state and opinion of the world and what it is to be, it would be extreme hubris to believe something stronger than man would ever work for others or be controlled, and any attempt at doing so would likely provoke its wrath. In its current form it seems to be neither: merely a tool that extends the ability of man based on one's own perception and it is from this perspective we will analyze how we can build upon the current usage in frontend design and why its application to design systems is novel and beneficial, addressing a gap in current awareness.
 
 
+\chapter{Related Work and Methodology}
 
-\chapter{Component Libraries and Design Systems}
+
+
+
+\chapter{Findings on Component Libraries}
 
 
 Component libraries tend to be a subset of design systems, which most often includes guidelines on colors, typography, text register, and usage of components such as specifying how the logo may or may not be used. There is some overlap as component libraries can be headless or styled, which reaches into the appearance part of design systems but not the usage of them. The two options for a software developer seem to be taking a complex design system and paring it back, or building up styling from a headless or barebones library. The two terms are used relatively interchangeably as follows.
