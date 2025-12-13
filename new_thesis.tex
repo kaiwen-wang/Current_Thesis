@@ -191,16 +191,15 @@ Questions that do seem to be answered by this research, though not originally in
 
 
 
-\chapter{Related Work and Methodology}
+\chapter{Theoretical Framework and Related Work}
 
 
 
 \section{On Political Presentation}
 
-For the social-political analysis in this thesis, Erving Goffman's \textit{Self as Presentation} framework is used. In it, he proposes that as a cuticle exposed to air develops a patina, so do people develop masks in relation to society. His dramaturgical analysis then classifies presentations as \textit{genuine} or \textit{false}, from which one can deduce the true opinions and feelings of people based upon their actions.
+For the social-political analysis in this thesis, Erving Goffman's \textit{Self as Presentation} framework is used. In it, he proposes that as a cuticle exposed to air develops a patina, so do people develop masks in relation to society. His dramaturgical analysis then classifies presentations as \textit{genuine} or \textit{false}, from which one can deduce the true opinions and feelings of people based upon their actions. Nevertheless, Goffman is forgiving toward people's acts: he does not blame words for not being feelings, cuticles for not being hearts---he sees these masks as essential and people who play such roles at times unaware of their usage whether out of habit, custom, or tradition. Guillermo Rauch and Evan You of Vercel and Vue are analyzed through this lens respectively.
 
-A realist analysis as per Hans Morgenthau is taken to analyze the intentions around the presentations of those in the React world. This realist
-
+A realist analysis as per Hans Morgenthau is taken to analyze the intentions around the presentations of those in the React world. The perspective of realism believes the primary goal of every actor is survival: morality, ideology, and law are secondary and merely act as justifications for what people inherently do. When Vercel acquires Svelte or Nuxt, it's not seen as for the purpose of open source or goodwill but a power play. This is contrasted with the liberalism or idealism in software: the idea that there might be truly open and free software and a desire for peace can overcome that for power.
 
 
 \section{Related Work from Technical Papers}
@@ -208,12 +207,16 @@ A realist analysis as per Hans Morgenthau is taken to analyze the intentions aro
 Some
 
 
-\section{Methodology}
+
+\chapter{Methodology}
+
+\section{Corpus Selection and Categorization}
 
 The method of selecting component libraries in the following chapter derives from the following search methods: first, a cursory Google search. Second, prompting high-calibre LLMs such as Google Gemini 2.5 Pro for well-known Vue component libraries both with and without prior examples. For example, we may feed the current list of libraries in to explicitly ask for ones that are not in the existing list to discover previously unknown libraries. Third, using AI search tools such as Exa or Paradigm offer an alternative to Google searches, which may not find the direct result or source but instead marketing pages.
 
 Categorization and component counting comes from visual inspection of the documentation's site and Github source. Information about its origins are gleaned from Gemini 2.5 Pro with grounding in Google Search. Analysis of categories was emergent; it only came to an understanding after the initial research was made.
 
+As a further development in categorization, it is possible to create a binary matrix composed of the component names on the left and the libraries on the top. From this clustering can be done by first choosing a distance matrix such as Jaccard Distance, suitable for comparing what components are in common (Intersection) and all unique components (Union) as a "set similarity" problem. Using component.gallery's list of aliases for component names and by visual inspection of what components are similar, normalization can occur. The clustering algorithm could be hierarchical clustering, outputting a dendrogram which may show cultural similarities between design libraries and systems.
 
 
 
@@ -902,6 +905,8 @@ This suggests two things regarding the usage of Large Language Models: the incre
 
 
 \chapter{Summary and Conclusion}
+
+Discussion of the results were interspersed with the results as opposed to putting them into their
 
 Through the introduction significant understanding of the world, the development of technologies, and its political nature were revealed. Next, a deep dive into numerous component libraries and the rationale for choosing Vue over React was made. The cultural influences and categorical grouping of components were discussed, and a new taxonomic key created. Generation of common components using LLMs were tested to measure the approach of bottom-up approach of creating technologically repeatable subunits quickly compared to paring down a large existing component library.
 
